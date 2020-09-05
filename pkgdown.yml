@@ -1,0 +1,8 @@
+pandoc: 2.7.3
+pkgdown: 1.5.1
+pkgdown_sha: ~
+articles:
+  countries: countries.html
+  visualise: visualise.html
+last_built: 2020-09-05T09:59Z
+
