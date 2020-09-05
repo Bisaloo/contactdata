@@ -49,7 +49,7 @@ The most basic function allows you to get matrix data for a specific country:
 
 ```{r example}
 library(contactdata)
-contact_matrix(France)
+contact_matrix("France")
 ```
 
 You can also get several countries at once with the `contact_countries()`
