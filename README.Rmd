@@ -1,0 +1,57 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# contactdata
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of contactdata is to provide access to social contact data for 152
+countries. This data comes from
+
+> Kiesha Prem, Alex R. Cook, Mark Jit, *Projecting social contact matrices in 
+152 countries using contact surveys and demographic data*, PLoS Comp. Biol.
+(2017), https://doi.org/10.1371/journal.pcbi.1005697.
+
+(please cite it in your publications, alongside this package).
+
+contactdata offers an easier access to this data, makes it readily compatible
+with [tidyverse](https://tidyverse.org/) packages, such as 
+[ggplot2](https://ggplot2.tidyverse.org/), via the `contact_countries()` 
+function, and provides an easy way to harmonise country nomenclature by using
+the [countrycode](https://cran.r-project.org/package=countrycode) package as
+authoritative name source.
+
+## Installation
+
+You can install the development version of contactdata from GitHub with:
+
+```{r, eval = FALSE}
+# install.packages("remotes")
+remotes::install_github("Bisaloo/contactdata")
+```
+
+## Example
+
+The most basic function allows you to get matrix data for a specific country:
+
+```{r example}
+library(contactdata)
+contact_matrix(France)
+```
+
+You can also get several countries at once with the `contact_countries()`
+function, as detailed in the 
+[vignette](https://bisaloo.github.io/contactdata/articles/visualise.html).

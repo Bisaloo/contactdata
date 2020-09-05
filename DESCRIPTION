@@ -31,6 +31,8 @@ Suggests:
     knitr,
     spelling,
     testthat
+URL: https://bisaloo.github.io/contactdata, https://github.com/bisaloo/contactdata
+BugReports: https://github.com/bisaloo/contactdata/issues
 Encoding: UTF-8
 Language: en-GB
 Roxygen: list(markdown = TRUE)
