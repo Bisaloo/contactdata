@@ -1,0 +1,39 @@
+Package: contactdata
+Title: Social contact matrices for 152 countries
+Version: 0.1
+Authors@R: 
+    c(person(given = "Hugo",
+             family = "Gruson",
+             role = c("cre", "aut", "cph"),
+             email = "hugo.gruson+R@normalesup.org",
+             comment = c(ORCID = "0000-0002-4094-1476")),
+      person(given = "Kiesha",
+             family = "Prem",
+             role = "dtc",
+             comment = c(ORCID = "0000-0003-0528-798X")),
+      person(given = c("Alex", "Richard"),
+             family = "Cook",
+             role = "dtc",
+             comment = c(ORCID = "0000-0002-6271-5832")),
+      person(given = "Mark",
+             family = "Jit",
+             role = "dtc",
+             comment = c(ORCID = "0000-0001-6658-8255")))
+Description: Data package for the supplementary data in Prem et al. (2017). 
+    Provides easy access to contact data for 152 countries, for use in
+    epidemiological, demographical or social sciences research.
+License: MIT + file LICENSE
+Depends: 
+    R (>= 3.5)
+Suggests: 
+    countrycode,
+    ggplot2,
+    knitr,
+    spelling,
+    testthat
+Encoding: UTF-8
+Language: en-GB
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+VignetteBuilder: knitr
+Config/testthat/edition: 3

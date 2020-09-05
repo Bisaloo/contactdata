@@ -1,0 +1,55 @@
+---
+title: "Visualise contact matrices"
+author: "Hugo Gruson"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Visualise contact matrices}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r}
+library(contactdata)
+```
+
+In this vignette, we are going to try to visualise the contact matrices for 
+9 Western Europe countries. The list of these countries is:
+
+```{r}
+countries <- c("Portugal", "Spain", "Italy", "France", "Ireland", "Belgium", "Luxembourg", "Germany", "Switzerland")
+```
+
+We can get the contact data for all these countries in a single function call 
+with:
+
+```{r}
+contact_data <- contact_countries(countries, location = "all")
+```
+
+For the visualisation itself, we use the graphical package ggplot2, which offers
+a large flexibility in terms of customisation:
+
+```{r, eval = requireNamespace("ggplot2", quietly = TRUE)}
+library(ggplot2)
+ggplot(contact_data, aes(x = age_from, y = age_to, fill = contact)) + 
+  geom_tile() +
+  facet_wrap(~ country)
+```
+The default colour palette and theme are not very suitable for our data but we
+can easily edit them with:
+
+```{r, eval = requireNamespace("ggplot2", quietly = TRUE)}
+ggplot(contact_data, aes(x = age_from, y = age_to, fill = contact)) + 
+  geom_tile() +
+  facet_wrap(~ country) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
+  scale_fill_viridis_c()
+```
