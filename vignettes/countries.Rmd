@@ -37,7 +37,7 @@ The full list is available with the `available_contacts()`:
 Below is a map that may help you find out which countries are absent from the
 dataset:
 
-```{r, dev='svglite', fig.width=10, fig.fullwidth=TRUE, eval = requireNamespace("ggplot2", quietly = TRUE) & requireNamespace("maps", quietly = TRUE) & requireNamespace("countrycode", quietly = TRUE)}
+```{r, fig.width=10, fig.fullwidth=TRUE, eval = requireNamespace("ggplot2", quietly = TRUE) & requireNamespace("maps", quietly = TRUE) & requireNamespace("countrycode", quietly = TRUE)}
 library(ggplot2)
 
 wlrd <- map_data("world")

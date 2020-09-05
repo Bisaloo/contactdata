@@ -12,7 +12,9 @@ vignette: >
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.height = 10,
+  fig.width = 10
 )
 ```
 
@@ -41,8 +43,10 @@ a large flexibility in terms of customisation:
 library(ggplot2)
 ggplot(contact_data, aes(x = age_from, y = age_to, fill = contact)) + 
   geom_tile() +
-  facet_wrap(~ country)
+  facet_wrap(~ country) +
+  coord_equal()
 ```
+
 The default colour palette and theme are not very suitable for our data but we
 can easily edit them with:
 
@@ -50,6 +54,7 @@ can easily edit them with:
 ggplot(contact_data, aes(x = age_from, y = age_to, fill = contact)) + 
   geom_tile() +
   facet_wrap(~ country) +
+  coord_equal() +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
   scale_fill_viridis_c()
 ```
