@@ -10,7 +10,7 @@ status](https://github.com/Bisaloo/contactdata/workflows/R-CMD-check/badge.svg)]
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Codecov test
-coverage](https://codecov.io/gh/Bisaloo/contactdata/branch/master/graph/badge.svg)](https://codecov.io/gh/Bisaloo/contactdata?branch=master)
+coverage](https://codecov.io/gh/Bisaloo/contactdata/branch/main/graph/badge.svg)](https://codecov.io/gh/Bisaloo/contactdata?branch=main)
 <!-- badges: end -->
 
 The goal of contactdata is to provide access to social contact data for
