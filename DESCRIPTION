@@ -30,7 +30,8 @@ Suggests:
     ggplot2,
     knitr,
     spelling,
-    testthat
+    testthat,
+    covr
 URL: https://bisaloo.github.io/contactdata, https://github.com/bisaloo/contactdata
 BugReports: https://github.com/bisaloo/contactdata/issues
 Encoding: UTF-8

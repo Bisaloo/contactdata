@@ -8,3 +8,4 @@
 ^docs$
 ^pkgdown$
 ^hex-contactdata\.hex$
+^codecov\.yml$
