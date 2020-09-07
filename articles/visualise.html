@@ -96,7 +96,7 @@
       <h1 data-toc-skip>Visualise contact matrices</h1>
                         <h4 class="author">Hugo Gruson</h4>
             
-            <h4 class="date">2020-09-06</h4>
+            <h4 class="date">2020-09-07</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/bisaloo/contactdata/blob/master/vignettes/visualise.Rmd"><code>vignettes/visualise.Rmd</code></a></small>
       <div class="hidden name"><code>visualise.Rmd</code></div>
@@ -109,7 +109,7 @@
 <p>In this vignette, we are going to try to visualise the contact matrices for 9 Western Europe countries. The list of these countries is:</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">countries</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Portugal"</span>, <span class="st">"Spain"</span>, <span class="st">"Italy"</span>, <span class="st">"France"</span>, <span class="st">"Ireland"</span>, <span class="st">"Belgium"</span>, <span class="st">"Luxembourg"</span>, <span class="st">"Germany"</span>, <span class="st">"Switzerland"</span>)</pre></body></html></div>
 <p>We can get the contact data for all these countries in a single function call with:</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">contact_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/contact_countries.html">contact_countries</a></span>(<span class="no">countries</span>, <span class="kw">location</span> <span class="kw">=</span> <span class="st">"all"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">contact_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/contact_df_countries.html">contact_df_countries</a></span>(<span class="no">countries</span>, <span class="kw">location</span> <span class="kw">=</span> <span class="st">"all"</span>)</pre></body></html></div>
 <p>For the visualisation itself, we use the graphical package ggplot2, which offers a large flexibility in terms of customisation:</p>
 <div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">contact_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">age_from</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">age_to</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="no">contact</span>)) +
@@ -125,6 +125,15 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="kw">axis.text.x</span> <span class="kw">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="kw">angle</span> <span class="kw">=</span> <span class="fl">90</span>, <span class="kw">vjust</span> <span class="kw">=</span> <span class="fl">0.5</span>, <span class="kw">hjust</span> <span class="kw">=</span> <span class="fl">1</span>)) +
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_c</a></span>()</pre></body></html></div>
 <p><img src="visualise_files/figure-html/unnamed-chunk-5-1.png" width="960"></p>
+<p>You can also visualise the contact data at a specific <code>location</code>, e.g. at school:</p>
+<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">contact_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/contact_df_countries.html">contact_df_countries</a></span>(<span class="no">countries</span>, <span class="kw">location</span> <span class="kw">=</span> <span class="st">"school"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">contact_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">age_from</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">age_to</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="no">contact</span>)) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile</a></span>() +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span>(~ <span class="no">country</span>) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_fixed.html">coord_equal</a></span>() +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="kw">axis.text.x</span> <span class="kw">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="kw">angle</span> <span class="kw">=</span> <span class="fl">90</span>, <span class="kw">vjust</span> <span class="kw">=</span> <span class="fl">0.5</span>, <span class="kw">hjust</span> <span class="kw">=</span> <span class="fl">1</span>)) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_c</a></span>()</pre></body></html></div>
+<p><img src="visualise_files/figure-html/unnamed-chunk-7-1.png" width="960"></p>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
