@@ -1,6 +1,6 @@
-test_that("available_contacts()", {
+test_that("list_countries()", {
 
-  contacts <- available_contacts()
+  contacts <- list_countries()
 
   expect_type(contacts, "character")
   expect_length(contacts, 152)

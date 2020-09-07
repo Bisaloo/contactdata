@@ -1,8 +1,8 @@
-test_that("contact_countries()", {
+test_that("contact_df_countries()", {
 
   test_countries <- c("Austria", "Belgium")
 
-  res <- contact_countries(test_countries)
+  res <- contact_df_countries(test_countries)
 
   expect_s3_class(res, "data.frame")
   expect_identical(dim(res), c(16L*16L*length(test_countries), 4L))
