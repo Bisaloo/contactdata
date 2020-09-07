@@ -110,14 +110,17 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the development version of contactdata from GitHub with:</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="co"># install.packages("remotes")</span>
-<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"Bisaloo/contactdata"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="co"># install.packages("remotes")</span>
+<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"Bisaloo/contactdata"</span>)
+</pre></div>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>The most basic function allows you to get matrix data for a specific country:</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">contactdata</span>)
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://bisaloo.github.io/contactdata">contactdata</a></span>)
 <span class="fu"><a href="reference/contact_matrix.html">contact_matrix</a></span>(<span class="st">"France"</span>)
 <span class="co">#&gt;           00_05     05_10     10_15     15_20     20_25     25_30     30_35</span>
 <span class="co">#&gt; 00_05 3.8049208 1.1064463 0.4119145 0.2553693 0.3417530 0.7532100 1.2090488</span>
@@ -169,8 +172,9 @@
 <span class="co">#&gt; 60_65 0.26297656 0.12855394</span>
 <span class="co">#&gt; 65_70 0.27590642 0.13898285</span>
 <span class="co">#&gt; 70_75 0.97407644 0.32576427</span>
-<span class="co">#&gt; 75_80 0.36754549 0.64291815</span></pre></div>
-<p>You can also get several countries at once with the <code>contact_countries()</code> function, as detailed in the <a href="https://bisaloo.github.io/contactdata/articles/visualise.html">vignette</a>.</p>
+<span class="co">#&gt; 75_80 0.36754549 0.64291815</span>
+</pre></div>
+<p>You can also get several countries at once with the <code><a href="reference/contact_df_countries.html">contact_df_countries()</a></code> function, as detailed in the <a href="https://bisaloo.github.io/contactdata/articles/visualise.html">vignette</a>.</p>
 </div>
 </div>
   </div>
@@ -224,7 +228,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.0.</p>
 </div>
 
       </footer>

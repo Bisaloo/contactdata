@@ -1,8 +1,6 @@
 pandoc: 2.7.3
-pkgdown: 1.5.1
+pkgdown: 1.6.0
 pkgdown_sha: ~
-articles:
-  countries: countries.html
-  visualise: visualise.html
-last_built: 2020-09-07T15:18Z
+articles: []
+last_built: 2020-09-07T15:59Z
 

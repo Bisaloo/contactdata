@@ -146,8 +146,8 @@
     </div>
 
     <pre class="usage"><span class='fu'>contact_df_countries</span>(
-  <span class='no'>countries</span>,
-  <span class='kw'>location</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"all"</span>, <span class='st'>"home"</span>, <span class='st'>"school"</span>, <span class='st'>"work"</span>, <span class='st'>"other"</span>)
+  <span class='kw'>countries</span>,
+  location = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"all"</span>, <span class='st'>"home"</span>, <span class='st'>"school"</span>, <span class='st'>"work"</span>, <span class='st'>"other"</span>)
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -180,7 +180,8 @@ matrices in 152 countries using contact surveys and demographic data, PLoS
 Comp. Biol. (2017), doi: <a href='https://doi.org/10.1371/journal.pcbi.1005697'>10.1371/journal.pcbi.1005697</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>contact_df_countries</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Austria"</span>, <span class='st'>"Belgium"</span>), <span class='kw'>location</span> <span class='kw'>=</span> <span class='st'>"all"</span>)</div><div class='output co'>#&gt;     country age_from age_to      contact
+    <pre class="examples"><div class='input'><span class='fu'>contact_df_countries</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Austria"</span>, <span class='st'>"Belgium"</span>), location = <span class='st'>"all"</span>)
+</div><div class='output co'>#&gt;     country age_from age_to      contact
 #&gt; 1   Austria    00_05  00_05 1.327180e+00
 #&gt; 2   Austria    05_10  00_05 4.823092e-01
 #&gt; 3   Austria    10_15  00_05 1.745796e-01
@@ -709,7 +710,7 @@ Comp. Biol. (2017), doi: <a href='https://doi.org/10.1371/journal.pcbi.1005697'>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.0.</p>
 </div>
 
       </footer>

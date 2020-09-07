@@ -105,14 +105,17 @@
 
     
     
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">contactdata</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://bisaloo.github.io/contactdata">contactdata</a></span>)
+</pre></div>
 <p>The data included in this package comes from the article</p>
 <blockquote>
 <p>Kiesha Prem, Alex R. Cook, Mark Jit, <em>Projecting social contact matrices in 152 countries using contact surveys and demographic data</em>, PLoS Comp. Biol. (2017), <a href="https://doi.org/10.1371/journal.pcbi.1005697" class="uri">https://doi.org/10.1371/journal.pcbi.1005697</a>.</p>
 </blockquote>
 <p>and as indicated by the title, not all countries were included.</p>
 <p>The full list is available with the <code><a href="../reference/list_countries.html">list_countries()</a></code> function:</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r">(<span class="no">all_contacts</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/list_countries.html">list_countries</a></span>())
+<div class="sourceCode" id="cb2"><pre class="downlit">
+(<span class="kw">all_contacts</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/list_countries.html">list_countries</a></span>())
 <span class="co">#&gt;   [1] "Albania"              "Algeria"              "Andorra"             </span>
 <span class="co">#&gt;   [4] "Antigua &amp; Barbuda"    "Argentina"            "Armenia"             </span>
 <span class="co">#&gt;   [7] "Australia"            "Austria"              "Azerbaijan"          </span>
@@ -163,19 +166,22 @@
 <span class="co">#&gt; [142] "UK"                   "Tanzania"             "US"                  </span>
 <span class="co">#&gt; [145] "Uruguay"              "Uzbekistan"           "Vanuatu"             </span>
 <span class="co">#&gt; [148] "Venezuela"            "Vietnam"              "Yemen"               </span>
-<span class="co">#&gt; [151] "Zambia"               "Zimbabwe"</span></pre></body></html></div>
+<span class="co">#&gt; [151] "Zambia"               "Zimbabwe"</span>
+</pre></div>
 <p>Below is a map that may help you find out which countries are absent from the dataset:</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span>)
 
-<span class="no">wlrd</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/map_data.html">map_data</a></span>(<span class="st">"world"</span>)
-<span class="no">wlrd</span>$<span class="no">region</span> <span class="kw">&lt;-</span> <span class="kw pkg">countrycode</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/countrycode/man/countryname.html">countryname</a></span>(<span class="no">wlrd</span>$<span class="no">region</span>)
+<span class="kw">wlrd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/map_data.html">map_data</a></span>(<span class="st">"world"</span>)
+<span class="kw">wlrd</span><span class="op">$</span><span class="kw">region</span> <span class="op">&lt;-</span> <span class="kw">countrycode</span>::<span class="fu"><a href="https://rdrr.io/pkg/countrycode/man/countryname.html">countryname</a></span>(<span class="kw">wlrd</span><span class="op">$</span><span class="kw">region</span>)
 
-<span class="no">wlrd</span>$<span class="no">included</span> <span class="kw">&lt;-</span> <span class="no">wlrd</span>$<span class="no">region</span> <span class="kw">%in%</span> <span class="no">all_contacts</span>
+<span class="kw">wlrd</span><span class="op">$</span><span class="kw">included</span> <span class="op">&lt;-</span> <span class="kw">wlrd</span><span class="op">$</span><span class="kw">region</span> <span class="op">%in%</span> <span class="kw">all_contacts</span>
 
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">wlrd</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">long</span>, <span class="no">lat</span>, <span class="kw">group</span> <span class="kw">=</span> <span class="no">group</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="no">included</span>)) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_polygon.html">geom_polygon</a></span>() +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_fixed.html">coord_equal</a></span>() +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>()</pre></body></html></div>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw">wlrd</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">long</span>, <span class="kw">lat</span>, group = <span class="kw">group</span>, fill = <span class="kw">included</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_polygon.html">geom_polygon</a></span>() <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_fixed.html">coord_equal</a></span>() <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>()
+</pre></div>
 <p><img src="countries_files/figure-html/unnamed-chunk-3-1.png" width="960"></p>
 <p><strong>Note that this package does not make any geopolitical statement and only provides the data as it has been published.</strong></p>
   </div>
@@ -193,7 +199,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.0.</p>
 </div>
 
       </footer>

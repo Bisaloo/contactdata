@@ -145,7 +145,7 @@
     <p>Get contact data matrix for a specific country</p>
     </div>
 
-    <pre class="usage"><span class='fu'>contact_matrix</span>(<span class='no'>country</span>, <span class='kw'>location</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"all"</span>, <span class='st'>"home"</span>, <span class='st'>"school"</span>, <span class='st'>"work"</span>, <span class='st'>"other"</span>))</pre>
+    <pre class="usage"><span class='fu'>contact_matrix</span>(<span class='kw'>country</span>, location = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"all"</span>, <span class='st'>"home"</span>, <span class='st'>"school"</span>, <span class='st'>"work"</span>, <span class='st'>"other"</span>))</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -172,7 +172,8 @@ matrices in 152 countries using contact surveys and demographic data, PLoS
 Comp. Biol. (2017), doi: <a href='https://doi.org/10.1371/journal.pcbi.1005697'>10.1371/journal.pcbi.1005697</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>contact_matrix</span>(<span class='st'>"France"</span>, <span class='kw'>location</span> <span class='kw'>=</span> <span class='st'>"all"</span>)</div><div class='output co'>#&gt;           00_05     05_10     10_15     15_20     20_25     25_30     30_35
+    <pre class="examples"><div class='input'><span class='fu'>contact_matrix</span>(<span class='st'>"France"</span>, location = <span class='st'>"all"</span>)
+</div><div class='output co'>#&gt;           00_05     05_10     10_15     15_20     20_25     25_30     30_35
 #&gt; 00_05 3.8049208 1.1064463 0.4119145 0.2553693 0.3417530 0.7532100 1.2090488
 #&gt; 05_10 1.0620240 5.0325631 1.0108210 0.2729936 0.1637277 0.4151037 0.9207158
 #&gt; 10_15 0.2383228 1.5384390 6.9859632 0.8459108 0.2870553 0.2443827 0.4032533
@@ -223,7 +224,8 @@ Comp. Biol. (2017), doi: <a href='https://doi.org/10.1371/journal.pcbi.1005697'>
 #&gt; 65_70 0.27590642 0.13898285
 #&gt; 70_75 0.97407644 0.32576427
 #&gt; 75_80 0.36754549 0.64291815</div><div class='input'>
-<span class='fu'>contact_matrix</span>(<span class='st'>"Belgium"</span>, <span class='kw'>location</span> <span class='kw'>=</span> <span class='st'>"school"</span>)</div><div class='output co'>#&gt;               00_05         05_10         10_15         15_20         20_25
+<span class='fu'>contact_matrix</span>(<span class='st'>"Belgium"</span>, location = <span class='st'>"school"</span>)
+</div><div class='output co'>#&gt;               00_05         05_10         10_15         15_20         20_25
 #&gt; 00_05  2.231562e+00  2.188485e-01  3.900767e-01  2.688331e-02  1.032931e-02
 #&gt; 05_10  2.472377e-01  3.117592e+00  2.057124e-01  1.607709e-02  9.661761e-19
 #&gt; 10_15  7.631087e-02  1.573915e-01  4.195039e+00  1.005322e-01  6.057941e-02
@@ -307,7 +309,7 @@ Comp. Biol. (2017), doi: <a href='https://doi.org/10.1371/journal.pcbi.1005697'>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.0.</p>
 </div>
 
       </footer>
