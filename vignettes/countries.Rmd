@@ -28,10 +28,10 @@ The data included in this package comes from the article
 
 and as indicated by the title, not all countries were included.
 
-The full list is available with the `available_contacts()`:
+The full list is available with the `list_countries()` function:
 
 ```{r}
-(all_contacts <- available_contacts())
+(all_contacts <- list_countries())
 ```
 
 Below is a map that may help you find out which countries are absent from the

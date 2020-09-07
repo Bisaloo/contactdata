@@ -17,7 +17,7 @@
 #'
 #' @importFrom stats reshape
 #'
-#' @inherit available_contacts references
+#' @inherit list_countries references
 
 contact_countries <- function(countries, location = c("all", "home", "school", "work", "other")) {
 

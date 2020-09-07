@@ -14,7 +14,7 @@
 #'
 #' @export
 #'
-#' @inherit available_contacts references
+#' @inherit list_countries references
 
 contact_matrix <- function(country, location = c("all", "home", "school", "work", "other")) {
 
@@ -31,7 +31,7 @@ contact_matrix <- function(country, location = c("all", "home", "school", "work"
   if (is.null(matrix_country)) {
     stop(
       "The country ", country, " is not included in the dataset.\n",
-      "Use the available_contacts() function to get a list of all countries in",
+      "Use the list_countries() function to get a list of all countries in",
       " the dataset.",
       call. = FALSE
     )
