@@ -101,5 +101,5 @@ contact_matrix("France")
 ```
 
 You can also get several countries at once with the
-`contact_countries()` function, as detailed in the
+`contact_df_countries()` function, as detailed in the
 [vignette](https://bisaloo.github.io/contactdata/articles/visualise.html).
