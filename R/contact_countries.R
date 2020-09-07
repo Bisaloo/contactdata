@@ -11,7 +11,7 @@
 #'   * `contact`: the intensity of contact
 #'
 #' @examples
-#' contact_countries(c("Austria", "Belgium"), location = "all")
+#' contact_df_countries(c("Austria", "Belgium"), location = "all")
 #'
 #' @export
 #'
@@ -19,7 +19,7 @@
 #'
 #' @inherit list_countries references
 
-contact_countries <- function(countries, location = c("all", "home", "school", "work", "other")) {
+contact_df_countries <- function(countries, location = c("all", "home", "school", "work", "other")) {
 
   res <- lapply(countries, contact_matrix, location)
 
