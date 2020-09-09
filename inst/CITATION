@@ -1,23 +1,20 @@
 citHeader("Please cite both the package and the original article in your publications:")
 
-citEntry(
-  entry = "Manual",
-  title = paste0("contactdata R package v",
-                 packageVersion("contactdata"),
-                 ": Social contact matrices for 152 countries."),
-  author = "Hugo Gruson",
-  url = "https://cran.r-project.org/package=contactdata",
-  year = format(Sys.Date(), "%Y"),
-  textVersion = paste0(
-    "Hugo Gruson (", format(Sys.Date(), "%Y"),
-    "), contactdata R package v", packageVersion("contactdata"),
-    ": Social contact matrices for 152 countries. ",
-    "https://cran.r-project.org/package=contactdata"
-  )
+year <- sub("-.*", "", meta$Date)
+note <- sprintf("R package version %s", meta$Version)
+
+bibentry(
+  bibtype = "Misc",
+  title   = "{contactdata}: Social Contact Matrices for 152 Countries",
+  author = person("Hugo", "Gruson"),
+  year   = year,
+  note   = note,
+  header = "To cite this package in publications, please use:",
+  url    = "https://CRAN.R-project.org/package=contactdata"
 )
 
-citEntry(
-  entry    = "Article",
+bibentry(
+  bibtype  = "Article",
   title    = "Projecting social contact matrices in 152 countries using contact surveys and demographic data",
   author   = c("Kiesha Prem", "Alex R. Cook", "Mark Jit"),
   journal  = "PLoS Computational Biology",
@@ -25,10 +22,5 @@ citEntry(
   volume   = "13",
   number   = "9",
   pages    = "e1005697",
-  doi      = "10.1371/journal.pcbi.1005697",
-  textVersion = paste(
-    "Kiesha Prem, Alex R. Cook, Mark Jit  (2017), Projecting social contact ",
-    "matrices in 152 countries using contact surveys and demographic data, ",
-    "PLoS Comp. Biol., https://doi.org/10.1371/journal.pcbi.1005697"
-  )
+  doi      = "10.1371/journal.pcbi.1005697"
 )
