@@ -1,5 +1,5 @@
 Package: contactdata
-Title: Social contact matrices for 152 countries
+Title: Social Contact Matrices for 152 Countries
 Version: 0.1
 Authors@R: 
     c(person(given = "Hugo",
@@ -21,7 +21,7 @@ Authors@R:
              comment = c(ORCID = "0000-0001-6658-8255")))
 Description: Data package for the supplementary data in Prem et al. (2017). 
     Provides easy access to contact data for 152 countries, for use in
-    epidemiological, demographical or social sciences research.
+    epidemiological, demographic or social sciences research.
 License: MIT + file LICENSE
 Depends: 
     R (>= 3.5)
