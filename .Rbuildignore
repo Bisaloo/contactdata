@@ -9,3 +9,4 @@
 ^pkgdown$
 ^hex-contactdata\.hex$
 ^codecov\.yml$
+^cran-comments\.md$
