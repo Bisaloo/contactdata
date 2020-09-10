@@ -24,11 +24,12 @@ The goal of contactdata is to provide access to social contact data for
 (please cite it in your publications, alongside this package).
 
 contactdata offers an easier access to this data, makes it readily
-compatible with [tidyverse](https://tidyverse.org/) packages, such as
-[ggplot2](https://ggplot2.tidyverse.org/), via the `contact_countries()`
-function, and provides an easy way to harmonise country nomenclature by
-using the [countrycode](https://cran.r-project.org/package=countrycode)
-package as authoritative name source.
+compatible with [tidyverse](https://www.tidyverse.org/) packages, such
+as [ggplot2](https://ggplot2.tidyverse.org/), via the
+`contact_countries()` function, and provides an easy way to harmonise
+country nomenclature by using the
+[countrycode](https://cran.r-project.org/package=countrycode) package as
+authoritative name source.
 
 ## Installation
 
