@@ -19,7 +19,8 @@ Authors@R:
              family = "Jit",
              role = "dtc",
              comment = c(ORCID = "0000-0001-6658-8255")))
-Description: Data package for the supplementary data in Prem et al. (2017). 
+Description: Data package for the supplementary data in Prem et al. (2017)
+    <doi:10.1371/journal.pcbi.1005697>.
     Provides easy access to contact data for 152 countries, for use in
     epidemiological, demographic or social sciences research.
 License: MIT + file LICENSE
