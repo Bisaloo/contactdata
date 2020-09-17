@@ -13,5 +13,7 @@
 
 0 errors | 0 warnings | 1 note
 
-* This is a new resubmission, addressing Uwe Ligges' comments about trailing
-slashes in URLs.
+* This is a resubmission, addressing:
+- Uwe Ligges' comments about trailing slashes in URLs.
+- Gregor Seyer's comments about reference formatting in DESCRIPTION.
+
