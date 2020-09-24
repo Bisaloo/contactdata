@@ -35,7 +35,14 @@ authoritative name source.
 
 ## Installation
 
-You can install the development version of contactdata from GitHub with:
+The stable version of contactdata is available on CRAN:
+
+``` r
+install.packages("contactdata")
+```
+
+Alternatively, you can install the development version of contactdata
+from GitHub with:
 
 ``` r
 # install.packages("remotes")
