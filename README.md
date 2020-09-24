@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![cran
+version](https://www.r-pkg.org/badges/version-ago/contactdata)](https://cran.r-project.org/package=contactdata/)
 [![R build
 status](https://github.com/Bisaloo/contactdata/workflows/R-CMD-check/badge.svg)](https://github.com/Bisaloo/contactdata/actions)
 [![Lifecycle:

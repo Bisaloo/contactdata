@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # contactdata <img src="man/figures/logo.svg" align="right" alt="" width="120" />
 
 <!-- badges: start -->
+[![cran version](https://www.r-pkg.org/badges/version-ago/contactdata)](https://cran.r-project.org/package=contactdata/)
 [![R build status](https://github.com/Bisaloo/contactdata/workflows/R-CMD-check/badge.svg)](https://github.com/Bisaloo/contactdata/actions)
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Codecov test coverage](https://codecov.io/gh/Bisaloo/contactdata/branch/main/graph/badge.svg)](https://codecov.io/gh/Bisaloo/contactdata?branch=main)
@@ -38,6 +39,8 @@ the [countrycode](https://cran.r-project.org/package=countrycode) package as
 authoritative name source.
 
 ## Installation
+
+
 
 You can install the development version of contactdata from GitHub with:
 
