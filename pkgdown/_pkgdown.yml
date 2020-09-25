@@ -1,6 +1,13 @@
 template:
   params:
     bootswatch: flatly
+  opengraph:
+    image:
+      src: man/figures/logo.png
+      alt: "Two hands locked in a handshake"
+    twitter:
+      creator: "@grusonh"
+      card: summary_large_image
 
 authors:
   Hugo Gruson:
