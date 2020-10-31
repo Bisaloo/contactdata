@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   countries: countries.html
   visualise: visualise.html
-last_built: 2020-10-23T11:05Z
+last_built: 2020-10-31T17:26Z
 urls:
   reference: https://bisaloo.github.io/contactdata//reference
   article: https://bisaloo.github.io/contactdata//articles
