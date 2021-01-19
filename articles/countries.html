@@ -43,7 +43,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">contactdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.9000</span>
       </span>
     </div>
 
@@ -51,7 +51,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -80,7 +80,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/bisaloo/contactdata/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -94,14 +94,13 @@
 
       
 
-      </header><script src="countries_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="countries_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
-<script src="countries_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
+      </header><script src="countries_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>List of included countries</h1>
                         <h4 class="author">Hugo Gruson</h4>
             
-            <h4 class="date">2020-10-31</h4>
+            <h4 class="date">2021-01-19</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/bisaloo/contactdata/blob/master/vignettes/countries.Rmd"><code>vignettes/countries.Rmd</code></a></small>
       <div class="hidden name"><code>countries.Rmd</code></div>
@@ -110,16 +109,16 @@
 
     
     
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bisaloo.github.io/contactdata/">contactdata</a></span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bisaloo.github.io/contactdata/">contactdata</a></span><span class="op">)</span></code></pre></div>
 <p>The data included in this package comes from the article</p>
 <blockquote>
 <p>Kiesha Prem, Alex R. Cook, Mark Jit, <em>Projecting social contact matrices in 152 countries using contact surveys and demographic data</em>, PLoS Comp. Biol. (2017), <a href="https://doi.org/10.1371/journal.pcbi.1005697" class="uri">https://doi.org/10.1371/journal.pcbi.1005697</a>.</p>
 </blockquote>
 <p>and as indicated by the title, not all countries were included.</p>
 <p>The full list is available with the <code><a href="../reference/list_countries.html">list_countries()</a></code> function:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="op">(</span><span class="va">all_contacts</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/list_countries.html">list_countries</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="op">(</span><span class="va">all_contacts</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/list_countries.html">list_countries</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;   [1] "Albania"              "Algeria"              "Andorra"             </span>
 <span class="co">#&gt;   [4] "Antigua &amp; Barbuda"    "Argentina"            "Armenia"             </span>
 <span class="co">#&gt;   [7] "Australia"            "Austria"              "Azerbaijan"          </span>
@@ -170,10 +169,10 @@
 <span class="co">#&gt; [142] "UK"                   "Tanzania"             "US"                  </span>
 <span class="co">#&gt; [145] "Uruguay"              "Uzbekistan"           "Vanuatu"             </span>
 <span class="co">#&gt; [148] "Venezuela"            "Vietnam"              "Yemen"               </span>
-<span class="co">#&gt; [151] "Zambia"               "Zimbabwe"</span></pre></div>
+<span class="co">#&gt; [151] "Zambia"               "Zimbabwe"</span></code></pre></div>
 <p>Below is a map that may help you find out which countries are absent from the dataset:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 
 <span class="va">wlrd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/map_data.html">map_data</a></span><span class="op">(</span><span class="st">"world"</span><span class="op">)</span>
 <span class="va">wlrd</span><span class="op">$</span><span class="va">region</span> <span class="op">&lt;-</span> <span class="fu">countrycode</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/countrycode/man/countryname.html">countryname</a></span><span class="op">(</span><span class="va">wlrd</span><span class="op">$</span><span class="va">region</span><span class="op">)</span>
@@ -183,7 +182,7 @@
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">wlrd</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">long</span>, <span class="va">lat</span>, group <span class="op">=</span> <span class="va">group</span>, fill <span class="op">=</span> <span class="va">included</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_polygon.html">geom_polygon</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_fixed.html">coord_equal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><img src="countries_files/figure-html/unnamed-chunk-3-1.png" width="960"></p>
 <p><strong>Note that this package does not make any geopolitical statement and only provides the data as it has been published.</strong></p>
   </div>
