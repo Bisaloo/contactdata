@@ -35,18 +35,17 @@ authoritative name source.
 
 ## Installation
 
-The stable version of contactdata is available on CRAN:
+You can install this package from CRAN:
 
 ``` r
 install.packages("contactdata")
 ```
 
-Alternatively, you can install the development version of contactdata
-from GitHub with:
+or the development version from [GitHub](https://github.com/bisaloo),
+via my [r-universe](https://bisaloo.r-universe.dev/):
 
 ``` r
-# install.packages("remotes")
-remotes::install_github("Bisaloo/contactdata")
+install.packages("asymptor", repos = "https://bisaloo.r-universe.dev")
 ```
 
 ## Example
