@@ -45,7 +45,7 @@ or the development version from [GitHub](https://github.com/bisaloo),
 via my [r-universe](https://bisaloo.r-universe.dev/):
 
 ``` r
-install.packages("asymptor", repos = "https://bisaloo.r-universe.dev")
+install.packages("contactdata", repos = "https://bisaloo.r-universe.dev")
 ```
 
 ## Example
