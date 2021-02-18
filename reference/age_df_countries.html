@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • contactdata</title>
+<title>Get a data.frame (in long format) of population by age for multiple countries — age_df_countries • contactdata</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,7 +48,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Get a data.frame (in long format) of population by age for multiple countries — age_df_countries" />
+<meta property="og:description" content="Get a data.frame (in long format) of population by age for multiple countries" />
 <meta property="og:image" content="https://bisaloo.github.io/contactdata/reference/figures/logo.png" />
 <meta property="og:image:alt" content="Two hands locked in a handshake" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -72,7 +73,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -137,60 +138,43 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Get a data.frame (in long format) of population by age for multiple countries</h1>
+    <small class="dont-index">Source: <a href='https://github.com/bisaloo/contactdata/blob/master/R/age_countries.R'><code>R/age_countries.R</code></a></small>
+    <div class="hidden name"><code>age_df_countries.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Get a data.frame (in long format) of population by age for multiple countries</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>age_df_countries</span><span class='op'>(</span><span class='va'>countries</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="age_df_countries.html">age_df_countries()</a></code> </p>
-        </td>
-        <td><p>Get a data.frame (in long format) of population by age for multiple countries</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="contact_df_countries.html">contact_df_countries()</a></code> </p>
-        </td>
-        <td><p>Get a data.frame (in long format) of contact data for multiple countries</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="contact_matrix.html">contact_matrix()</a></code> </p>
-        </td>
-        <td><p>Get contact data matrix for a specific country</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="list_countries.html">list_countries()</a></code> </p>
-        </td>
-        <td><p>Get the list of countries included in the dataset</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>countries</th>
+      <td><p>A character string or a vector of character containing the
+names of the countries for which to return contact data</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A data.frame (in long format) with 3 columns:</p><ul>
+<li><p><code>country</code>: the country name</p></li>
+<li><p><code>age</code>: the age group</p></li>
+<li><p><code>pop</code>: the number of people in this age group</p></li>
+</ul>
+
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>age_df_countries</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Austria"</span>, <span class='st'>"Belgium"</span><span class='op'>)</span><span class='op'>)</span>
+
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
