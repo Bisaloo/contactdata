@@ -80,7 +80,7 @@ population_byage <- vroom::vroom("data-raw/idb5yr.all") %>%
   filter(Country %in% contactdata::list_countries()) %>%
   rename_with(~ gsub("^POP", "", .x), matches("^POP\\d+\\_\\d+$")) %>%
   rowwise() %>%
-  mutate("80+" = sum(`80_84`, `85_89`, `90_94`, `95_99`), .keep = "unused") %>%
+  mutate("75+" = sum(`75_79`, `80_84`, `85_89`, `90_94`, `95_99`), .keep = "unused") %>%
   tidyr::pivot_longer(-Country, names_to = "age", values_to = "pop") %>%
   as.data.frame()
 
