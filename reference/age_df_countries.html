@@ -112,7 +112,10 @@
       <a href="../articles/countries.html">List of included countries</a>
     </li>
     <li>
-      <a href="../articles/visualise.html">Visualise contact matrices</a>
+      <a href="../articles/visualise_age.html">Visualise age pyramids</a>
+    </li>
+    <li>
+      <a href="../articles/visualise_contact.html">Visualise contact matrices</a>
     </li>
   </ul>
 </li>
@@ -175,39 +178,39 @@ names of the countries for which to return contact data</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>age_df_countries</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Austria"</span>, <span class='st'>"Belgium"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;     Country   age     pop
-#&gt; 97  Austria 70_74  412613
-#&gt; 98  Austria 65_69  463005
-#&gt; 99  Austria 60_64  577840
-#&gt; 100 Austria   5_9  413258
-#&gt; 101 Austria 55_59  699785
-#&gt; 102 Austria 50_54  716265
-#&gt; 103 Austria 45_49  617300
-#&gt; 104 Austria 40_44  556170
-#&gt; 105 Austria 35_39  600221
-#&gt; 106 Austria 30_34  590607
-#&gt; 107 Austria 25_29  583279
-#&gt; 108 Austria 20_24  490270
-#&gt; 109 Austria 15_19  427882
-#&gt; 110 Austria 10_14  407418
-#&gt; 111 Austria   0_4  420129
-#&gt; 112 Austria   75+  876154
-#&gt; 177 Belgium 70_74  559926
-#&gt; 178 Belgium 65_69  637315
-#&gt; 179 Belgium 60_64  736126
-#&gt; 180 Belgium   5_9  675719
-#&gt; 181 Belgium 55_59  804893
-#&gt; 182 Belgium 50_54  791316
-#&gt; 183 Belgium 45_49  765230
-#&gt; 184 Belgium 40_44  756669
-#&gt; 185 Belgium 35_39  774709
-#&gt; 186 Belgium 30_34  769770
-#&gt; 187 Belgium 25_29  740608
-#&gt; 188 Belgium 20_24  669644
-#&gt; 189 Belgium 15_19  643220
-#&gt; 190 Belgium 10_14  680427
-#&gt; 191 Belgium   0_4  659696
-#&gt; 192 Belgium   75+ 1038949</div><div class='input'>
+</div><div class='output co'>#&gt;     country   age population
+#&gt; 97  Austria 70_74     412613
+#&gt; 98  Austria 65_69     463005
+#&gt; 99  Austria 60_64     577840
+#&gt; 100 Austria   5_9     413258
+#&gt; 101 Austria 55_59     699785
+#&gt; 102 Austria 50_54     716265
+#&gt; 103 Austria 45_49     617300
+#&gt; 104 Austria 40_44     556170
+#&gt; 105 Austria 35_39     600221
+#&gt; 106 Austria 30_34     590607
+#&gt; 107 Austria 25_29     583279
+#&gt; 108 Austria 20_24     490270
+#&gt; 109 Austria 15_19     427882
+#&gt; 110 Austria 10_14     407418
+#&gt; 111 Austria   0_4     420129
+#&gt; 112 Austria   75+     876154
+#&gt; 177 Belgium 70_74     559926
+#&gt; 178 Belgium 65_69     637315
+#&gt; 179 Belgium 60_64     736126
+#&gt; 180 Belgium   5_9     675719
+#&gt; 181 Belgium 55_59     804893
+#&gt; 182 Belgium 50_54     791316
+#&gt; 183 Belgium 45_49     765230
+#&gt; 184 Belgium 40_44     756669
+#&gt; 185 Belgium 35_39     774709
+#&gt; 186 Belgium 30_34     769770
+#&gt; 187 Belgium 25_29     740608
+#&gt; 188 Belgium 20_24     669644
+#&gt; 189 Belgium 15_19     643220
+#&gt; 190 Belgium 10_14     680427
+#&gt; 191 Belgium   0_4     659696
+#&gt; 192 Belgium   75+    1038949</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

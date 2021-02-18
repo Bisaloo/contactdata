@@ -3,8 +3,9 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   countries: countries.html
-  visualise: visualise.html
-last_built: 2021-02-18T13:07Z
+  visualise_age: visualise_age.html
+  visualise_contact: visualise_contact.html
+last_built: 2021-02-18T13:39Z
 urls:
   reference: https://bisaloo.github.io/contactdata//reference
   article: https://bisaloo.github.io/contactdata//articles
