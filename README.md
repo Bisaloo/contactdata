@@ -10,7 +10,7 @@ version](https://www.r-pkg.org/badges/version-ago/contactdata)](https://cran.r-p
 [![R build
 status](https://github.com/Bisaloo/contactdata/workflows/R-CMD-check/badge.svg)](https://github.com/Bisaloo/contactdata/actions)
 [![Lifecycle:
-stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![Codecov test
 coverage](https://codecov.io/gh/Bisaloo/contactdata/branch/main/graph/badge.svg)](https://codecov.io/gh/Bisaloo/contactdata?branch=main)
 <!-- badges: end -->
