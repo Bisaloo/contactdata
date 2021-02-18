@@ -93,7 +93,8 @@ population_byage <- read_xlsx(tfile, skip = 16) %>%
   mutate(Country = fix_names(Country)) %>%
   filter(Country %in% contactdata::list_countries()) %>%
   rowwise() %>%
-  mutate("80+" = sum(`80-84`, `85-89`, `90-94`, `95-99`), .keep = "unused")
-
+  mutate("80+" = sum(`80-84`, `85-89`, `90-94`, `95-99`), .keep = "unused") %>%
+  tidyr::pivot_longer(-Country, names_to = "age", values_to = "pop") %>%
+  as.data.frame()
 
 saveRDS(population_byage, "inst/extdata/population_byage.rds")
