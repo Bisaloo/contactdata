@@ -22,7 +22,7 @@ age_df_countries <- function(countries) {
                 package = "contactdata")
   )
 
-  unknown_countries <- countries[!countries %in% pop_byage$Country]
+  unknown_countries <- countries[!countries %in% pop_byage$country]
 
   if (length(unknown_countries) != 0) {
     warning(
@@ -34,6 +34,6 @@ age_df_countries <- function(countries) {
     )
   }
 
-  return(pop_byage[pop_byage$Country %in% countries, ])
+  return(pop_byage[pop_byage$country %in% countries, ])
 
 }
