@@ -25,3 +25,6 @@ Get a data.frame (in long format) of population by age for multiple countries
 age_df_countries(c("Austria", "Belgium"))
 
 }
+\references{
+\url{https://www.census.gov/programs-surveys/international-programs/about/idb.html}
+}

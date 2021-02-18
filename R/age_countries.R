@@ -12,6 +12,9 @@
 #'
 #' @export
 #'
+#' @references
+#' <https://www.census.gov/programs-surveys/international-programs/about/idb.html>
+#'
 age_df_countries <- function(countries) {
 
   pop_byage <- readRDS(
