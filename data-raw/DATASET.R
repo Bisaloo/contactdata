@@ -67,3 +67,31 @@ for (l in locations) {
 }
 
 setwd(owd)
+
+library(dplyr)
+
+tfile <- tempfile(fileext = ".xlsx")
+
+source_file <- download.file(
+  "https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_Population/WPP2019_POP_F07_1_POPULATION_BY_AGE_BOTH_SEXES.xlsx",
+  tfile)
+
+population_byage <- read_xlsx(tfile, skip = 16) %>%
+  filter(Type == "Country/Area") %>%
+  filter(`Reference date (as of 1 July)` == "2020") %>%
+  rename(Country = `Region, subregion, country or area *`) %>%
+  select(Country, matches("^\\d+\\-\\d+$")) %>%
+  mutate(across(matches("^\\d+\\-\\d+$"), as.numeric)) %>%
+  mutate(across(matches("^\\d+\\-\\d+$"), ~ .x * 1000)) %>%
+  as.data.frame() %>%
+  add_row(Country = "Liechtenstein",
+          "0-4" = 2071, "5-9" = 2071, "10-14" = 2071, "15-19" = 2665,
+          "20-24" = 2665, "25-29" = 2665, "30-34" = 2665, "35-39" = 2665,
+          "40-44" = 2665, "45-49" = 2665, "50-54" = 2665, "55-59" = 2665,
+          "60-64" = 2665, "65-69" = 826, "70-74" = 826, "75-79" = 826,
+          "80-84" = 826, "85-89" = 826, "90-94" = 826, "95-99" = 826) %>%
+  mutate(Country = fix_names(Country)) %>%
+  rowwise() %>%
+  mutate("80+" = sum(`80-84`, `85-89`, `90-94`, `95-99`), .keep = "unused")
+
+saveRDS(population_byage, "inst/extdata/population_byage.rds")
