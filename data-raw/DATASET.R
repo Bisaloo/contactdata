@@ -91,7 +91,9 @@ population_byage <- read_xlsx(tfile, skip = 16) %>%
           "60-64" = 2665, "65-69" = 826, "70-74" = 826, "75-79" = 826,
           "80-84" = 826, "85-89" = 826, "90-94" = 826, "95-99" = 826) %>%
   mutate(Country = fix_names(Country)) %>%
+  filter(Country %in% contactdata::list_countries()) %>%
   rowwise() %>%
   mutate("80+" = sum(`80-84`, `85-89`, `90-94`, `95-99`), .keep = "unused")
+
 
 saveRDS(population_byage, "inst/extdata/population_byage.rds")
