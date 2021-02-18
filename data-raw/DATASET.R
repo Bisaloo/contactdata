@@ -8,11 +8,9 @@ fix_names <- function(name) {
   return(new_name)
 }
 
-memoise::cache_filesystem(
-  download.file(
-    url = "https://doi.org/10.1371/journal.pcbi.1005697.s002",
-    destfile = "all_datasets.zip"
-  )
+download.file(
+  url = "https://doi.org/10.1371/journal.pcbi.1005697.s002",
+  destfile = "all_datasets.zip"
 )
 
 files <- unzip("all_datasets.zip", unzip = "internal")
@@ -64,7 +62,7 @@ for (l in locations) {
     res[[c]] <- df
   }
 
-  saveRDS(res, paste0(owd, "/inst/extdata/", l, ".rds"))
+  saveRDS(res, paste0(owd, "/inst/extdata/contact_", l, ".rds"))
 
 }
 

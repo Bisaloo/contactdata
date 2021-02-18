@@ -24,7 +24,7 @@ contact_matrix <- function(country, location = c("all", "home", "school", "work"
 
   location <- match.arg(location)
 
-  all <- readRDS(system.file("extdata", paste0(location, ".rds"), package = "contactdata"))
+  all <- readRDS(system.file("extdata", paste0("contact_", location, ".rds"), package = "contactdata"))
 
   matrix_country <- all[[country]]
 
