@@ -112,3 +112,8 @@ contact_matrix("France")
 You can also get several countries at once with the
 `contact_df_countries()` function, as detailed in the
 [vignette](https://bisaloo.github.io/contactdata/articles/visualise.html).
+
+Because it is very likely that users of this package will also need data
+about the population in each age group, it is also bundled in this
+package for convenience. Please see `?age_df_countries` for more
+information.
