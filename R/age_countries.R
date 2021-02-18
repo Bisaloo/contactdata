@@ -31,6 +31,6 @@ age_df_countries <- function(countries) {
     )
   }
 
-  pop_byage <- pop_byage[pop_byage$Country %in% countries, ]
+  return(pop_byage[pop_byage$Country %in% countries, ])
 
 }
