@@ -2,7 +2,7 @@
 title: "Visualise age pyramids"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Visualise age pyramiods}
+  %\VignetteIndexEntry{Visualise age pyramids}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
