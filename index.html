@@ -34,6 +34,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -46,18 +48,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">contactdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.0</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -85,7 +81,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/bisaloo/contactdata/">
+  <a href="https://github.com/bisaloo/contactdata/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -102,34 +98,33 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="contactdata-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#contactdata-" class="anchor"></a>contactdata <img src="reference/figures/logo.svg" align="right" alt="" width="120">
+<div class="section level1">
+<div class="page-header"><h1 id="contactdata-">contactdata <img src="reference/figures/logo.svg" align="right" alt="" width="120"><a class="anchor" aria-label="anchor" href="#contactdata-"></a>
 </h1></div>
 <!-- badges: start -->
 
 <p>The goal of contactdata is to provide access to social contact data for 152 countries. This data comes from</p>
 <blockquote>
-<p>Kiesha Prem, Alex R. Cook, Mark Jit, <em>Projecting social contact matrices in 152 countries using contact surveys and demographic data</em>, PLoS Comp. Biol. (2017), <a href="https://doi.org/10.1371/journal.pcbi.1005697" class="uri">https://doi.org/10.1371/journal.pcbi.1005697</a>.</p>
+<p>Kiesha Prem, Alex R. Cook, Mark Jit, <em>Projecting social contact matrices in 152 countries using contact surveys and demographic data</em>, PLoS Comp. Biol. (2017), <a href="https://doi.org/10.1371/journal.pcbi.1005697" class="external-link uri">https://doi.org/10.1371/journal.pcbi.1005697</a>.</p>
 </blockquote>
 <p>(please cite it in your publications, alongside this package).</p>
-<p>contactdata offers an easier access to this data, makes it readily compatible with <a href="https://www.tidyverse.org/">tidyverse</a> packages, such as <a href="https://ggplot2.tidyverse.org/">ggplot2</a>, via the <code>contact_countries()</code> function, and provides an easy way to harmonise country nomenclature by using the <a href="https://cran.r-project.org/package=countrycode">countrycode</a> package as authoritative name source.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<p>contactdata offers an easier access to this data, makes it readily compatible with <a href="https://www.tidyverse.org/" class="external-link">tidyverse</a> packages, such as <a href="https://ggplot2.tidyverse.org/" class="external-link">ggplot2</a>, via the <code>contact_countries()</code> function, and provides an easy way to harmonise country nomenclature by using the <a href="https://cran.r-project.org/package=countrycode" class="external-link">countrycode</a> package as authoritative name source.</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>You can install this package from CRAN:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"contactdata"</span><span class="op">)</span></code></pre></div>
-<p>or the development version from <a href="https://github.com/bisaloo">GitHub</a>, via my <a href="https://bisaloo.r-universe.dev/">r-universe</a>:</p>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"contactdata"</span><span class="op">)</span></code></pre></div>
+<p>or the development version from <a href="https://github.com/bisaloo" class="external-link">GitHub</a>, via my <a href="https://bisaloo.r-universe.dev/" class="external-link">r-universe</a>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"contactdata"</span>, repos <span class="op">=</span> <span class="st">"https://bisaloo.r-universe.dev"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"contactdata"</span>, repos <span class="op">=</span> <span class="st">"https://bisaloo.r-universe.dev"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="example" class="section level2">
-<h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
+<div class="section level2">
+<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+</h2>
 <p>The most basic function allows you to get matrix data for a specific country:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bisaloo.github.io/contactdata/">contactdata</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://bisaloo.github.io/contactdata/">contactdata</a></span><span class="op">)</span>
 <span class="fu"><a href="reference/contact_matrix.html">contact_matrix</a></span><span class="op">(</span><span class="st">"France"</span><span class="op">)</span>
 <span class="co">#&gt;           00_05     05_10     10_15     15_20     20_25     25_30     30_35</span>
 <span class="co">#&gt; 00_05 3.8049208 1.1064463 0.4119145 0.2553693 0.3417530 0.7532100 1.2090488</span>
@@ -190,57 +185,61 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=contactdata">https://​cloud.r-project.org/​package=contactdata</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/bisaloo/contactdata/">https://​github.com/​bisaloo/​contactdata/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/bisaloo/contactdata/issues">https://​github.com/​bisaloo/​contactdata/​issues</a>
-</li>
-</ul>
-</div>
-<div class="license">
-<h2>License</h2>
-<ul class="list-unstyled">
-<li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
-</ul>
-</div>
-<div class="citation">
-<h2>Citation</h2>
-<ul class="list-unstyled">
-<li><a href="authors.html">Citing contactdata</a></li>
-</ul>
-</div>
-<div class="developers">
-<h2>Developers</h2>
-<ul class="list-unstyled">
-<li>
-<a href="https://www.normalesup.org/~hgruson/">Hugo Gruson</a> <br><small class="roles"> Maintainer, author, copyright holder </small> <a href="https://orcid.org/0000-0002-4094-1476" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="https://cloud.r-project.org/package=contactdata" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/bisaloo/contactdata/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/bisaloo/contactdata/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="license">
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://cran.r-project.org/package=contactdata/"><img src="https://www.r-pkg.org/badges/version-ago/contactdata" alt="cran version"></a></li>
-<li><a href="https://github.com/Bisaloo/contactdata/actions"><img src="https://github.com/Bisaloo/contactdata/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="https://lifecycle.r-lib.org/articles/stages.html"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
-<li><a href="https://codecov.io/gh/Bisaloo/contactdata?branch=main"><img src="https://codecov.io/gh/Bisaloo/contactdata/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing contactdata</a></li>
+</ul>
 </div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>
+<a href="https://www.normalesup.org/~hgruson/" class="external-link">Hugo Gruson</a> <br><small class="roles"> Maintainer, author, copyright holder </small> <a href="https://orcid.org/0000-0002-4094-1476" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="authors.html">More about authors...</a></li>
+</ul>
+</div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://cran.r-project.org/package=contactdata/" class="external-link"><img src="https://www.r-pkg.org/badges/version-ago/contactdata" alt="cran version"></a></li>
+<li><a href="https://github.com/Bisaloo/contactdata/actions" class="external-link"><img src="https://github.com/Bisaloo/contactdata/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
+<li><a href="https://codecov.io/gh/Bisaloo/contactdata?branch=main" class="external-link"><img src="https://codecov.io/gh/Bisaloo/contactdata/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
+</ul>
+</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="https://www.normalesup.org/~hgruson/">Hugo Gruson</a>.</p>
+  <p></p>
+<p>Developed by <a href="https://www.normalesup.org/~hgruson/" class="external-link">Hugo Gruson</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.0.</p>
 </div>
 
       </footer>
@@ -248,6 +247,8 @@
 
   
 
+
+  
 
   </body>
 </html>

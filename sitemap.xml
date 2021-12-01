@@ -1,27 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bisaloo.github.io/contactdata//index.html</loc>
+    <loc>https://bisaloo.github.io/contactdata/404.html</loc>
   </url>
   <url>
-    <loc>https://bisaloo.github.io/contactdata//reference/age_df_countries.html</loc>
+    <loc>https://bisaloo.github.io/contactdata/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://bisaloo.github.io/contactdata//reference/contact_df_countries.html</loc>
+    <loc>https://bisaloo.github.io/contactdata/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://bisaloo.github.io/contactdata//reference/contact_matrix.html</loc>
+    <loc>https://bisaloo.github.io/contactdata/articles/countries.html</loc>
   </url>
   <url>
-    <loc>https://bisaloo.github.io/contactdata//reference/list_countries.html</loc>
+    <loc>https://bisaloo.github.io/contactdata/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://bisaloo.github.io/contactdata//articles/countries.html</loc>
+    <loc>https://bisaloo.github.io/contactdata/articles/visualise_age.html</loc>
   </url>
   <url>
-    <loc>https://bisaloo.github.io/contactdata//articles/visualise_age.html</loc>
+    <loc>https://bisaloo.github.io/contactdata/articles/visualise_contact.html</loc>
   </url>
   <url>
-    <loc>https://bisaloo.github.io/contactdata//articles/visualise_contact.html</loc>
+    <loc>https://bisaloo.github.io/contactdata/authors.html</loc>
+  </url>
+  <url>
+    <loc>https://bisaloo.github.io/contactdata/index.html</loc>
+  </url>
+  <url>
+    <loc>https://bisaloo.github.io/contactdata/news/index.html</loc>
+  </url>
+  <url>
+    <loc>https://bisaloo.github.io/contactdata/reference/age_df_countries.html</loc>
+  </url>
+  <url>
+    <loc>https://bisaloo.github.io/contactdata/reference/contact_df_countries.html</loc>
+  </url>
+  <url>
+    <loc>https://bisaloo.github.io/contactdata/reference/contact_matrix.html</loc>
+  </url>
+  <url>
+    <loc>https://bisaloo.github.io/contactdata/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://bisaloo.github.io/contactdata/reference/list_countries.html</loc>
   </url>
 </urlset>

@@ -31,6 +31,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -43,18 +45,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">contactdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.0</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
@@ -82,7 +78,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/bisaloo/contactdata/">
+  <a href="https://github.com/bisaloo/contactdata/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -103,7 +99,7 @@
       <h1 data-toc-skip>Visualise age pyramids</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/bisaloo/contactdata/blob/master/vignettes/visualise_age.Rmd"><code>vignettes/visualise_age.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/bisaloo/contactdata/blob/HEAD/vignettes/visualise_age.Rmd" class="external-link"><code>vignettes/visualise_age.Rmd</code></a></small>
       <div class="hidden name"><code>visualise_age.Rmd</code></div>
 
     </div>
@@ -111,19 +107,19 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bisaloo.github.io/contactdata/">contactdata</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://bisaloo.github.io/contactdata/">contactdata</a></span><span class="op">)</span></code></pre></div>
 <p>In this vignette, we are going to try to visualise the age pyramid for 9 Western Europe countries. The list of these countries is:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">countries</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Portugal"</span>, <span class="st">"Spain"</span>, <span class="st">"Italy"</span>, <span class="st">"France"</span>, <span class="st">"Ireland"</span>, <span class="st">"Belgium"</span>, <span class="st">"Luxembourg"</span>, <span class="st">"Germany"</span>, <span class="st">"Switzerland"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="va">countries</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Portugal"</span>, <span class="st">"Spain"</span>, <span class="st">"Italy"</span>, <span class="st">"France"</span>, <span class="st">"Ireland"</span>, <span class="st">"Belgium"</span>, <span class="st">"Luxembourg"</span>, <span class="st">"Germany"</span>, <span class="st">"Switzerland"</span><span class="op">)</span></code></pre></div>
 <p>We can get the contact data for all these countries in a single function call with:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">age_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/age_df_countries.html">age_df_countries</a></span><span class="op">(</span><span class="va">countries</span><span class="op">)</span></code></pre></div>
 <p>For the visualisation itself, we use the graphical package ggplot2, which offers a large flexibility in terms of customisation:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">age_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">population</span>, y <span class="op">=</span> <span class="va">age</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">country</span>, scales <span class="op">=</span> <span class="st">"free"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">age_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">population</span>, y <span class="op">=</span> <span class="va">age</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">country</span>, scales <span class="op">=</span> <span class="st">"free"</span><span class="op">)</span></code></pre></div>
 <p><img src="visualise_age_files/figure-html/unnamed-chunk-4-1.png" width="960"></p>
   </div>
 
@@ -136,11 +132,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="https://www.normalesup.org/~hgruson/">Hugo Gruson</a>.</p>
+  <p></p>
+<p>Developed by <a href="https://www.normalesup.org/~hgruson/" class="external-link">Hugo Gruson</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.0.</p>
 </div>
 
       </footer>
@@ -148,6 +146,8 @@
 
   
 
+
+  
 
   </body>
 </html>
