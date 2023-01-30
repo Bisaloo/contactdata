@@ -16,15 +16,30 @@
 #'
 #' @inherit list_countries references
 
-contact_matrix <- function(country, location = c("all", "home", "school", "work", "other")) {
+contact_matrix <- function(
+  country,
+  location = c("all", "home", "school", "work", "other"),
+  setting = c("all", "rural", "urban"),
+  data_source = c("2017", "2020")
+) {
 
   if (length(country) != 1) {
     stop("Please provide a single country", call. = FALSE)
   }
 
   location <- match.arg(location)
+  data_source <- match.arg(data_source)
+  if (data_source != 2020 & !missing(setting)) {
+    stop("`setting` is only defined for `data_source = 2020`", call. = FALSE)
+  }
+  setting <- match.arg(setting)
 
-  all <- readRDS(system.file("extdata", paste0("contact_", location, ".rds"), package = "contactdata"))
+  all <- readRDS(
+    system.file(
+      "extdata", paste0("contact_", data_source, "_", location, "_", setting, ".rds"),
+      package = "contactdata"
+    )
+  )
 
   matrix_country <- all[[country]]
 

@@ -63,7 +63,7 @@ for (l in locations) {
     res[[c]] <- df
   }
 
-  saveRDS(res, paste0(owd, "/inst/extdata/contact_", l, ".rds"))
+  saveRDS(res, paste0(owd, "/inst/extdata/contact_2017_", l, "_all.rds"))
 
 }
 
