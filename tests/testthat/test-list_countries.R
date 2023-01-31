@@ -9,11 +9,11 @@ test_that("list_countries()", {
 
 test_that("age_df_countries() and contact_df_countries() provide data for all list_countries()`", {
 
-  expect_silent(
+  expect_no_condition(
     contacts <- contact_df_countries(list_countries())
   )
 
-  expect_silent(
+  expect_no_condition(
     popsizes <- age_df_countries(list_countries())
   )
 
