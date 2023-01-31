@@ -25,4 +25,8 @@ test_that("contact_matrix()", {
 
   expect_snapshot(res)
 
+  res_2020 <- contact_matrix("Belgium", location = "school", data_source = "2020")
+
+  expect_snapshot(res_2020)
+
 })
