@@ -23,4 +23,6 @@ test_that("contact_matrix()", {
     "not included"
   )
 
+  expect_snapshot(res)
+
 })
