@@ -19,9 +19,13 @@ population_byage <- vroom::vroom("data-raw/idb5yr.all") %>%
   filter(`#YR` == "2020") %>%
   rename(country = NAME) %>%
   select(country, matches("^POP\\d+\\_\\d+$")) %>%
-  mutate(country = fix_names(country)) %>%
+  mutate(country = fix_names(country), .after = 1) %>%
   filter(country %in% all_countries) %>%
   rename_with(~ gsub("^POP", "", .x), matches("^POP\\d+\\_\\d+$")) %>%
+  # Palestine is separated in 'West Bank' and 'Gaza Strip' in pop dataset so
+  # we need to sum
+  group_by(country) %>%
+  summarise(across(everything(), sum)) %>%
   rowwise() %>%
   mutate("75+" = sum(`75_79`, `80_84`, `85_89`, `90_94`, `95_99`), .keep = "unused") %>%
   tidyr::pivot_longer(-country, names_to = "age", values_to = "population") %>%
