@@ -4,13 +4,23 @@
 \alias{contact_matrix}
 \title{Get contact data matrix for a specific country}
 \usage{
-contact_matrix(country, location = c("all", "home", "school", "work", "other"))
+contact_matrix(
+  country,
+  location = c("all", "home", "school", "work", "other"),
+  setting = c("all", "rural", "urban"),
+  data_source = c("2020", "2017")
+)
 }
 \arguments{
 \item{country}{Character. The name of the country for which you want contact
 data.}
 
-\item{location}{Character. One of "all", "home", "school", "work" or "other".}
+\item{location}{Character. One of "all" (default), "home", "school", "work"
+or "other".}
+
+\item{setting}{Character. One of "all" (default), "rural", "urban"}
+
+\item{data_source}{Character. Either "202O" (default) or "2017"}
 }
 \value{
 A square (16 by 16) matrix containing the contact data between

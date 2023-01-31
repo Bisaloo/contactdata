@@ -2,7 +2,10 @@
 #'
 #' @param country Character. The name of the country for which you want contact
 #'    data.
-#' @param location Character. One of "all", "home", "school", "work" or "other".
+#' @param location Character. One of "all" (default), "home", "school", "work"
+#'   or "other".
+#' @param setting Character. One of "all" (default), "rural", "urban"
+#' @param data_source Character. Either "202O" (default) or "2017"
 #'
 #' @return A square (16 by 16) matrix containing the contact data between
 #'    the different age classes for a given country.

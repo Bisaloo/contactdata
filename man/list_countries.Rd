@@ -4,7 +4,10 @@
 \alias{list_countries}
 \title{Get the list of countries included in the dataset}
 \usage{
-list_countries()
+list_countries(data_source = c("2020", "2017"))
+}
+\arguments{
+\item{data_source}{Character. Either "202O" (default) or "2017"}
 }
 \value{
 A character vector with the name of all countries included in the

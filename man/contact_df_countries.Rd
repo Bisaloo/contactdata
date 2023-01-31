@@ -4,16 +4,13 @@
 \alias{contact_df_countries}
 \title{Get a data.frame (in long format) of contact data for multiple countries}
 \usage{
-contact_df_countries(
-  countries,
-  location = c("all", "home", "school", "work", "other")
-)
+contact_df_countries(countries, ...)
 }
 \arguments{
 \item{countries}{A character string or a vector of character containing the
 names of the countries for which to return contact data}
 
-\item{location}{Character. One of "all", "home", "school", "work" or "other".}
+\item{...}{Arguments passed to \code{\link[=contact_matrix]{contact_matrix()}}}
 }
 \value{
 A data.frame (in long format) with 4 columns:
