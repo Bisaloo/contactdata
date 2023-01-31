@@ -5,7 +5,7 @@
 #' @return A data.frame (in long format) with 3 columns:
 #'   * `country`: the country name
 #'   * `age`: the age group
-#'   * `pop`: the number of people in this age group
+#'   * `population`: the number of people in this age group
 #'
 #' @examples
 #' age_df_countries(c("Austria", "Belgium"))

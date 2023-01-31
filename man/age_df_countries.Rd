@@ -15,7 +15,7 @@ A data.frame (in long format) with 3 columns:
 \itemize{
 \item \code{country}: the country name
 \item \code{age}: the age group
-\item \code{pop}: the number of people in this age group
+\item \code{population}: the number of people in this age group
 }
 }
 \description{
