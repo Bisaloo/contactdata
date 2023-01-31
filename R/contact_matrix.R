@@ -20,7 +20,7 @@ contact_matrix <- function(
   country,
   location = c("all", "home", "school", "work", "other"),
   setting = c("all", "rural", "urban"),
-  data_source = c("2017", "2020")
+  data_source = c("2020", "2017")
 ) {
 
   if (length(country) != 1) {

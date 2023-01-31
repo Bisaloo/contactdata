@@ -18,7 +18,7 @@
 #' matrices in 152 countries using contact surveys and demographic data, PLoS
 #' Comp. Biol. (2017), \doi{10.1371/journal.pcbi.1005697}
 
-list_countries <- function(data_source = c("2017", "2020")) {
+list_countries <- function(data_source = c("2020", "2017")) {
 
   data_source <- as.character(data_source)
   data_source <- match.arg(data_source)
