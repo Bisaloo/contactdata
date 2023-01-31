@@ -26,7 +26,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -69,7 +69,7 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">contact_matrix</span><span class="op">(</span><span class="va">country</span>, location <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"all"</span>, <span class="st">"home"</span>, <span class="st">"school"</span>, <span class="st">"work"</span>, <span class="st">"other"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">contact_matrix</span><span class="op">(</span><span class="va">country</span>, location <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"all"</span>, <span class="st">"home"</span>, <span class="st">"school"</span>, <span class="st">"work"</span>, <span class="st">"other"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -77,24 +77,29 @@
     <dl><dt>country</dt>
 <dd><p>Character. The name of the country for which you want contact
 data.</p></dd>
+
+
 <dt>location</dt>
 <dd><p>Character. One of "all", "home", "school", "work" or "other".</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A square (16 by 16) matrix containing the contact data between
+    
+
+<p>A square (16 by 16) matrix containing the contact data between
 the different age classes for a given country.</p>
     </div>
     <div id="references">
     <h2>References</h2>
     <p>Kiesha Prem, Alex R. Cook, Mark Jit, Projecting social contact
 matrices in 152 countries using contact surveys and demographic data, PLoS
-Comp. Biol. (2017), doi: <a href="https://doi.org/10.1371/journal.pcbi.1005697" class="external-link">10.1371/journal.pcbi.1005697</a></p>
+Comp. Biol. (2017), <a href="https://doi.org/10.1371/journal.pcbi.1005697" class="external-link">doi:10.1371/journal.pcbi.1005697</a></p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">contact_matrix</span><span class="op">(</span><span class="st">"France"</span>, location <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">contact_matrix</span><span class="op">(</span><span class="st">"France"</span>, location <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           00_05     05_10     10_15     15_20     20_25     25_30     30_35</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 00_05 3.8049208 1.1064463 0.4119145 0.2553693 0.3417530 0.7532100 1.2090488</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 05_10 1.0620240 5.0325631 1.0108210 0.2729936 0.1637277 0.4151037 0.9207158</span>
@@ -146,8 +151,8 @@ Comp. Biol. (2017), doi: <a href="https://doi.org/10.1371/journal.pcbi.1005697" 
 <span class="r-out co"><span class="r-pr">#&gt;</span> 65_70 0.27590642 0.13898285</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 70_75 0.97407644 0.32576427</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 75_80 0.36754549 0.64291815</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu">contact_matrix</span><span class="op">(</span><span class="st">"Belgium"</span>, location <span class="op">=</span> <span class="st">"school"</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">contact_matrix</span><span class="op">(</span><span class="st">"Belgium"</span>, location <span class="op">=</span> <span class="st">"school"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>               00_05         05_10         10_15         15_20         20_25</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 00_05  2.231562e+00  2.188485e-01  3.900767e-01  2.688331e-02  1.032931e-02</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 05_10  2.472377e-01  3.117592e+00  2.057124e-01  1.607709e-02  9.661761e-19</span>
@@ -216,7 +221,7 @@ Comp. Biol. (2017), doi: <a href="https://doi.org/10.1371/journal.pcbi.1005697" 
 <span class="r-out co"><span class="r-pr">#&gt;</span> 65_70  5.775052e-74</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 70_75  4.622517e-02</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 75_80  1.014157e-96</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -231,7 +236,7 @@ Comp. Biol. (2017), doi: <a href="https://doi.org/10.1371/journal.pcbi.1005697" 
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
