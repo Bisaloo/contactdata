@@ -26,4 +26,6 @@ test_that("contact_df_countries()", {
     test_countries
   )
 
+  expect_snapshot(test_countries)
+
 })
