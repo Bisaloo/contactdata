@@ -6,9 +6,9 @@
 \alias{contactdata-package}
 \title{contactdata: Social Contact Matrices for 152 Countries}
 \description{
-\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Data package for the supplementary data in Prem et al. (2017) <doi:10.1371/journal.pcbi.1005697>. Provides easy access to contact data for 152 countries, for use in epidemiological, demographic or social sciences research.
+Data package for the supplementary data in Prem et al. (2017) \doi{10.1371/journal.pcbi.1005697}. Provides easy access to contact data for 152 countries, for use in epidemiological, demographic or social sciences research.
 }
 \seealso{
 Useful links:
