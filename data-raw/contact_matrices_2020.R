@@ -20,6 +20,7 @@ fichiers <- dir_ls(
 )
 
 new_names_all <- basename(gsub("(\\w+)/contact_([^_]+)(_\\w+)?\\.rdata$", "contact_2020_\\2_\\1.rds", fichiers))
+new_names_all <- gsub("_others_", "_other_", new_names_all)
 
 for (i in seq_along(fichiers)) {
 
