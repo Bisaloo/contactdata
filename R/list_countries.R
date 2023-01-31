@@ -1,5 +1,7 @@
 #' Get the list of countries included in the dataset
 #'
+#' @inheritParams contact_matrix
+#'
 #' @return A character vector with the name of all countries included in the
 #'    dataset
 #'
@@ -16,9 +18,17 @@
 #' matrices in 152 countries using contact surveys and demographic data, PLoS
 #' Comp. Biol. (2017), \doi{10.1371/journal.pcbi.1005697}
 
-list_countries <- function() {
+list_countries <- function(data_source = c("2017", "2020")) {
 
-  all_contacts <- readRDS(system.file("extdata", "all.rds", package = "contactdata"))
+  data_source <- as.character(data_source)
+  data_source <- match.arg(data_source)
+
+  all_contacts <- readRDS(
+    system.file(
+      "extdata", paste0("contact_", data_source, "_all_all.rds"),
+      package = "contactdata"
+    )
+  )
 
   return(names(all_contacts))
 

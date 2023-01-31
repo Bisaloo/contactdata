@@ -19,7 +19,12 @@
 #'
 #' @inherit list_countries references
 
-contact_df_countries <- function(countries, location = c("all", "home", "school", "work", "other"), setting = c("all", "rural", "urban"), data_source = c(2017, 2020)) {
+contact_df_countries <- function(
+  countries,
+  location = c("all", "home", "school", "work", "other"),
+  setting = c("all", "rural", "urban"),
+  data_source = c("2017", "2020")
+) {
 
   res <- lapply(countries, contact_matrix, location, setting, data_source)
 
