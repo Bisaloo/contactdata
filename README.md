@@ -7,8 +7,7 @@
 
 [![cran
 version](https://www.r-pkg.org/badges/version-ago/contactdata)](https://cran.r-project.org/package=contactdata/)
-[![R build
-status](https://github.com/Bisaloo/contactdata/workflows/R-CMD-check/badge.svg)](https://github.com/Bisaloo/contactdata/actions)
+[![R-CMD-check](https://github.com/Bisaloo/contactdata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Bisaloo/contactdata/actions/workflows/R-CMD-check.yaml)
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![Codecov test
