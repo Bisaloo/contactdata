@@ -1,14 +1,5 @@
 owd <- setwd(tempdir())
 
-fix_names <- function(name) {
-
-  # Convert to common names in English
-  name <- stringi::stri_trans_general(name, "Latin-ASCII")
-  new_name <- countrycode::countryname(name)
-
-  return(new_name)
-}
-
 download.file(
   url = "https://doi.org/10.1371/journal.pcbi.1005697.s002",
   destfile = "all_datasets.zip"
