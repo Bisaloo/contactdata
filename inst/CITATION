@@ -1,4 +1,4 @@
-citHeader("Please cite both the package and the original article in your publications:")
+citHeader("Please cite both the package and the original articles in your publications:")
 
 year <- sub("-.*", "", meta$Date)
 note <- sprintf("R package version %s", meta$Version)
@@ -22,4 +22,16 @@ bibentry(
   number   = "9",
   pages    = "e1005697",
   doi      = "10.1371/journal.pcbi.1005697"
+)
+
+bibentry(
+  bibtype  = "Article",
+  title    = "Projecting contact matrices in 177 geographical regions: An update and comparison with empirical data for the COVID-19 era",
+  author   = c("Kiesha Prem", "Kevin van Zandvoort", "Petra Klepac", "Rosalind M. Eggo", "Nicholas G. Davies", "CMMID COVID-19 Working Group", "Alex R. Cook", "Mark Jit"),
+  journal  = "PLoS Computational Biology",
+  year     = "2021",
+  volume   = "17",
+  number   = "7",
+  pages    = "e1009098",
+  doi      = "10.1371/journal.pcbi.1009098"
 )
