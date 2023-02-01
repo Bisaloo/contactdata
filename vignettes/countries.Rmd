@@ -1,10 +1,10 @@
 ---
-title: "List of included countries"
+title: "List of included regions"
 author: "Hugo Gruson"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{List of included countries}
+  %\VignetteIndexEntry{List of included regions}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -20,18 +20,27 @@ knitr::opts_chunk$set(
 library(contactdata)
 ```
 
-The data included in this package comes from the article
+The data included in this package comes from two articles
 
 > Kiesha Prem, Alex R. Cook, Mark Jit, *Projecting social contact matrices in 
 152 countries using contact surveys and demographic data*, PLoS Comp. Biol.
 (2017), https://doi.org/10.1371/journal.pcbi.1005697.
 
-and as indicated by the title, not all countries were included.
+and
+
+> Kiesha Prem, Kevin van Zandvoort, Petra Klepac, Rosalind M. Eggo, Nicholas G.
+Davies, CMMID COVID-19 Working Group, Alex R. Cook, Mark Jit, *Projecting
+contact matrices in 177 geographical regions: An update and comparison with
+empirical data for the COVID-19 era*, PLoS Comp. Biol. (2021),
+https://doi.org/10.1371/journal.pcbi.1009098.
+
+and as indicated by the titles, not all regions were included.
 
 The full list is available with the `list_countries()` function:
 
 ```{r}
-(all_contacts <- list_countries())
+(all_countries_2017 <- list_countries(data_source = 2017))
+(all_countries_2020 <- list_countries(data_source = 2020))
 ```
 
 Below is a map that may help you find out which countries are absent from the
@@ -40,12 +49,15 @@ dataset:
 ```{r, fig.width=10, fig.fullwidth=TRUE, eval = requireNamespace("ggplot2", quietly = TRUE) & requireNamespace("maps", quietly = TRUE) & requireNamespace("countrycode", quietly = TRUE)}
 library(ggplot2)
 
-wlrd <- map_data("world")
-wlrd$region <- countrycode::countryname(wlrd$region)
+wrld <- map_data("world")
+wrld$region <- countrycode::countryname(wlrd$region)
 
-wlrd$included <- wlrd$region %in% all_contacts
+wrld$included <- "Not included"
+wrld$included[wrld$region %in% all_countries_2020] <- "2020" 
+wrld$included[wrld$region %in% all_countries_2017] <- "2017 & 2020"
 
-ggplot(wlrd, aes(long, lat, group = group, fill = included)) +
+
+ggplot(wrld, aes(long, lat, group = group, fill = included)) +
   geom_polygon() +
   coord_equal() +
   theme_bw()
