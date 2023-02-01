@@ -4,9 +4,14 @@
 \alias{list_countries}
 \title{Get the list of countries included in the dataset}
 \usage{
-list_countries(data_source = c("2020", "2017"))
+list_countries(
+  setting = c("all", "rural", "urban"),
+  data_source = c("2020", "2017")
+)
 }
 \arguments{
+\item{setting}{Character. One of "all" (default), "rural", "urban"}
+
 \item{data_source}{Character. Either "202O" (default) or "2017"}
 }
 \value{
@@ -26,7 +31,13 @@ list_countries()
 
 }
 \references{
-Kiesha Prem, Alex R. Cook, Mark Jit, Projecting social contact
-matrices in 152 countries using contact surveys and demographic data, PLoS
+Kiesha Prem, Alex R. Cook, Mark Jit, \emph{Projecting social contact
+matrices in 152 countries using contact surveys and demographic data}, PLoS
 Comp. Biol. (2017), \doi{10.1371/journal.pcbi.1005697}
+
+Kiesha Prem, Kevin van Zandvoort, Petra Klepac, Rosalind M. Eggo,
+Nicholas G. Davies, CMMID COVID-19 Working Group, Alex R. Cook, Mark Jit,
+\emph{Projecting contact matrices in 177 geographical regions: An update and
+comparison with empirical data for the COVID-19 era}, PLoS Comp. Biol.
+(2021), \doi{10.1371/journal.pcbi.1009098}.
 }
