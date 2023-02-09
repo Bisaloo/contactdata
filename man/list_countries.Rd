@@ -5,12 +5,12 @@
 \title{Get the list of countries included in the dataset}
 \usage{
 list_countries(
-  setting = c("all", "rural", "urban"),
+  geographic_setting = c("all", "rural", "urban"),
   data_source = c("2020", "2017")
 )
 }
 \arguments{
-\item{setting}{Character. One of "all" (default), "rural", "urban"}
+\item{geographic_setting}{Character. One of "all" (default), "rural", "urban"}
 
 \item{data_source}{Character. Either "202O" (default) or "2017"}
 }
