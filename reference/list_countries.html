@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">contactdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
       </span>
     </div>
 
@@ -32,7 +32,7 @@
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
-      <a href="../articles/countries.html">List of included countries</a>
+      <a href="../articles/countries.html">List of included regions</a>
     </li>
     <li>
       <a href="../articles/visualise_age.html">Visualise age pyramids</a>
@@ -69,9 +69,22 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">list_countries</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">list_countries</span><span class="op">(</span></span>
+<span>  geographic_setting <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"all"</span>, <span class="st">"rural"</span>, <span class="st">"urban"</span><span class="op">)</span>,</span>
+<span>  data_source <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"2020"</span>, <span class="st">"2017"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
+    <div id="arguments">
+    <h2>Arguments</h2>
+    <dl><dt>geographic_setting</dt>
+<dd><p>Character. One of "all" (default), "rural", "urban"</p></dd>
+
+
+<dt>data_source</dt>
+<dd><p>Character. Either "202O" (default) or "2017"</p></dd>
+
+</dl></div>
     <div id="value">
     <h2>Value</h2>
     
@@ -87,65 +100,109 @@ If your names differ from the names used here, you should use
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>Kiesha Prem, Alex R. Cook, Mark Jit, Projecting social contact
-matrices in 152 countries using contact surveys and demographic data, PLoS
+    <p>Kiesha Prem, Alex R. Cook, Mark Jit, <em>Projecting social contact
+matrices in 152 countries using contact surveys and demographic data</em>, PLoS
 Comp. Biol. (2017), <a href="https://doi.org/10.1371/journal.pcbi.1005697" class="external-link">doi:10.1371/journal.pcbi.1005697</a></p>
+<p>Kiesha Prem, Kevin van Zandvoort, Petra Klepac, Rosalind M. Eggo,
+Nicholas G. Davies, CMMID COVID-19 Working Group, Alex R. Cook, Mark Jit,
+<em>Projecting contact matrices in 177 geographical regions: An update and
+comparison with empirical data for the COVID-19 era</em>, PLoS Comp. Biol.
+(2021), <a href="https://doi.org/10.1371/journal.pcbi.1009098" class="external-link">doi:10.1371/journal.pcbi.1009098</a>
+.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">list_countries</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1] "Albania"              "Algeria"              "Andorra"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4] "Antigua &amp; Barbuda"    "Argentina"            "Armenia"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [7] "Australia"            "Austria"              "Azerbaijan"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [10] "Bahamas"              "Bahrain"              "Bangladesh"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [13] "Belarus"              "Belgium"              "Belize"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [16] "Benin"                "Bhutan"               "Bolivia"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [19] "Bosnia"               "Botswana"             "Brazil"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [22] "Brunei"               "Bulgaria"             "Burkina Faso"        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [25] "Cape Verde"           "Cambodia"             "Cameroon"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [28] "Canada"               "Chile"                "China"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [31] "Colombia"             "Congo - Brazzaville"  "Costa Rica"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [34] "Croatia"              "Cyprus"               "Czechia"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [37] "Denmark"              "Dominican Republic"   "Ecuador"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [40] "Egypt"                "El Salvador"          "Estonia"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [43] "Ethiopia"             "Fiji"                 "Finland"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [46] "France"               "Georgia"              "Germany"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [49] "Ghana"                "Greece"               "Guatemala"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [52] "Guinea"               "Guyana"               "Haiti"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [55] "Honduras"             "Hong Kong"            "Hungary"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [58] "Iceland"              "India"                "Indonesia"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [61] "Iran"                 "Iraq"                 "Ireland"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [64] "Israel"               "Italy"                "Jamaica"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [67] "Japan"                "Jordan"               "Kazakhstan"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [70] "Kenya"                "Kiribati"             "Kuwait"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [73] "Kyrgyzstan"           "Laos"                 "Latvia"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [76] "Lebanon"              "Lesotho"              "Liberia"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [79] "Lithuania"            "Luxembourg"           "Malaysia"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [82] "Maldives"             "Malta"                "Mauritania"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [85] "Mauritius"            "Mexico"               "Monaco"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [88] "Mongolia"             "Montenegro"           "Morocco"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [91] "Mozambique"           "Namibia"              "Nepal"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [94] "Netherlands"          "New Zealand"          "Nicaragua"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [97] "Niger"                "Nigeria"              "Oman"                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [100] "Pakistan"             "Panama"               "Paraguay"            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [103] "Peru"                 "Philippines"          "Poland"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [106] "Portugal"             "Qatar"                "South Korea"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [109] "Romania"              "Russia"               "Rwanda"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [112] "St. Lucia"            "Samoa"                "São Tomé &amp; Príncipe" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [115] "Saudi Arabia"         "Senegal"              "Serbia"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [118] "Seychelles"           "Sierra Leone"         "Singapore"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [121] "Slovakia"             "Slovenia"             "Solomon Islands"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [124] "South Africa"         "Spain"                "Sri Lanka"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [127] "Suriname"             "Sweden"               "Switzerland"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [130] "Syria"                "Taiwan"               "Tajikistan"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [133] "North Macedonia"      "Thailand"             "Timor-Leste"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [136] "Tonga"                "Tunisia"              "Turkey"              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [139] "Uganda"               "Ukraine"              "United Arab Emirates"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [142] "UK"                   "Tanzania"             "US"                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [145] "Uruguay"              "Uzbekistan"           "Vanuatu"             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [148] "Venezuela"            "Vietnam"              "Yemen"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [151] "Zambia"               "Zimbabwe"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1] "Afghanistan"              "Angola"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3] "Albania"                  "United Arab Emirates"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [5] "Argentina"                "Armenia"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [7] "Austria"                  "Azerbaijan"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [9] "Burundi"                  "Belgium"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [11] "Benin"                    "Burkina Faso"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [13] "Bangladesh"               "Bulgaria"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [15] "Bahrain"                  "Bahamas"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [17] "Bosnia"                   "Belarus"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [19] "Belize"                   "Bolivia"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [21] "Brazil"                   "Barbados"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [23] "Brunei"                   "Bhutan"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [25] "Botswana"                 "Central African Republic"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [27] "Canada"                   "Switzerland"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [29] "Chile"                    "China"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [31] "Côte d’Ivoire"            "Cameroon"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [33] "Congo - Kinshasa"         "Congo - Brazzaville"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [35] "Colombia"                 "Comoros"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [37] "Cape Verde"               "Costa Rica"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [39] "Cuba"                     "Cyprus"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [41] "Czechia"                  "Germany"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [43] "Djibouti"                 "Denmark"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [45] "Dominican Republic"       "Algeria"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [47] "Ecuador"                  "Egypt"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [49] "Eritrea"                  "Spain"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [51] "Estonia"                  "Ethiopia"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [53] "Finland"                  "Fiji"                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [55] "France"                   "Gabon"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [57] "UK"                       "Georgia"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [59] "Ghana"                    "Guinea"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [61] "Gambia"                   "Guinea-Bissau"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [63] "Equatorial Guinea"        "Greece"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [65] "Guatemala"                "Guyana"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [67] "Hong Kong"                "Honduras"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [69] "Croatia"                  "Hungary"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [71] "Indonesia"                "India"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [73] "Ireland"                  "Iran"                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [75] "Iraq"                     "Iceland"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [77] "Israel"                   "Italy"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [79] "Jamaica"                  "Jordan"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [81] "Kazakhstan"               "Kenya"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [83] "Kyrgyzstan"               "Cambodia"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [85] "South Korea"              "Kuwait"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [87] "Laos"                     "Liberia"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [89] "Libya"                    "St. Lucia"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [91] "Sri Lanka"                "Lesotho"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [93] "Lithuania"                "Luxembourg"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [95] "Latvia"                   "Macao"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [97] "Morocco"                  "Moldova"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [99] "Madagascar"               "Maldives"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [101] "Mexico"                   "North Macedonia"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [103] "Mali"                     "Malta"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [105] "Myanmar"                  "Montenegro"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [107] "Mongolia"                 "Mozambique"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [109] "Mauritania"               "Mauritius"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [111] "Malawi"                   "Malaysia"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [113] "Namibia"                  "Niger"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [115] "Nigeria"                  "Nicaragua"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [117] "Netherlands"              "Norway"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [119] "Nepal"                    "New Zealand"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [121] "Oman"                     "Pakistan"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [123] "Panama"                   "Peru"                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [125] "Philippines"              "Papua New Guinea"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [127] "Poland"                   "Puerto Rico"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [129] "North Korea"              "Portugal"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [131] "Paraguay"                 "Palestine"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [133] "Qatar"                    "Romania"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [135] "Russia"                   "Rwanda"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [137] "Saudi Arabia"             "Sudan"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [139] "Senegal"                  "Singapore"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [141] "Solomon Islands"          "Sierra Leone"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [143] "El Salvador"              "Serbia"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [145] "South Sudan"              "São Tomé &amp; Príncipe"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [147] "Suriname"                 "Slovakia"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [149] "Slovenia"                 "Sweden"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [151] "Eswatini"                 "Syria"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [153] "Chad"                     "Togo"                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [155] "Thailand"                 "Tajikistan"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [157] "Turkmenistan"             "Timor-Leste"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [159] "Tonga"                    "Trinidad &amp; Tobago"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [161] "Tunisia"                  "Turkey"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [163] "Tanzania"                 "Uganda"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [165] "Ukraine"                  "Uruguay"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [167] "US"                       "Uzbekistan"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [169] "St. Vincent &amp; Grenadines" "Venezuela"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [171] "Vietnam"                  "Vanuatu"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [173] "Samoa"                    "Yemen"                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [175] "South Africa"             "Zambia"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [177] "Zimbabwe"                </span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">contactdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
       </span>
     </div>
 
@@ -32,7 +32,7 @@
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
-      <a href="../articles/countries.html">List of included countries</a>
+      <a href="../articles/countries.html">List of included regions</a>
     </li>
     <li>
       <a href="../articles/visualise_age.html">Visualise age pyramids</a>
@@ -96,38 +96,38 @@ names of the countries for which to return contact data</p></dd>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">age_df_countries</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Austria"</span>, <span class="st">"Belgium"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     country   age population</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 97  Austria 70_74     412613</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 98  Austria 65_69     463005</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 99  Austria 60_64     577840</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 100 Austria   5_9     413258</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 101 Austria 55_59     699785</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 102 Austria 50_54     716265</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 103 Austria 45_49     617300</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 104 Austria 40_44     556170</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 105 Austria 35_39     600221</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 106 Austria 30_34     590607</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 107 Austria 25_29     583279</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 108 Austria 20_24     490270</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 109 Austria 15_19     427882</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 110 Austria 10_14     407418</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 111 Austria   0_4     420129</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 112 Austria   75+     876154</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 177 Belgium 70_74     559926</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 178 Belgium 65_69     637315</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 179 Belgium 60_64     736126</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 180 Belgium   5_9     675719</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 181 Belgium 55_59     804893</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 182 Belgium 50_54     791316</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 183 Belgium 45_49     765230</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 184 Belgium 40_44     756669</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 185 Belgium 35_39     774709</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 186 Belgium 30_34     769770</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 187 Belgium 25_29     740608</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 188 Belgium 20_24     669644</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 189 Belgium 15_19     643220</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 190 Belgium 10_14     680427</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 191 Belgium   0_4     659696</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 192 Belgium   75+    1038949</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 145 Austria 70_74     412613</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 146 Austria 65_69     463005</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 147 Austria 60_64     577840</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 148 Austria   5_9     413258</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 149 Austria 55_59     699785</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 150 Austria 50_54     716265</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 151 Austria 45_49     617300</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 152 Austria 40_44     556170</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 153 Austria 35_39     600221</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 154 Austria 30_34     590607</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 155 Austria 25_29     583279</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 156 Austria 20_24     490270</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 157 Austria 15_19     427882</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 158 Austria 10_14     407418</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 159 Austria   0_4     420129</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 160 Austria   75+     876154</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 257 Belgium 70_74     559926</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 258 Belgium 65_69     637315</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 259 Belgium 60_64     736126</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 260 Belgium   5_9     675719</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 261 Belgium 55_59     804893</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 262 Belgium 50_54     791316</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 263 Belgium 45_49     765230</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 264 Belgium 40_44     756669</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 265 Belgium 35_39     774709</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 266 Belgium 30_34     769770</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 267 Belgium 25_29     740608</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 268 Belgium 20_24     669644</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 269 Belgium 15_19     643220</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 270 Belgium 10_14     680427</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 271 Belgium   0_4     659696</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 272 Belgium   75+    1038949</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

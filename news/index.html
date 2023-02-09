@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">contactdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
       </span>
     </div>
 
@@ -32,7 +32,7 @@
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
-      <a href="../articles/countries.html">List of included countries</a>
+      <a href="../articles/countries.html">List of included regions</a>
     </li>
     <li>
       <a href="../articles/visualise_age.html">Visualise age pyramids</a>
@@ -63,6 +63,28 @@
       <small>Source: <a href="https://github.com/bisaloo/contactdata/blob/HEAD/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="1.0.0" id="contactdata-100">contactdata 1.0.0<a class="anchor" aria-label="anchor" href="#contactdata-100"></a></h2>
+<div class="section level3">
+<h3 id="new-features-1-0-0">New features<a class="anchor" aria-label="anchor" href="#new-features-1-0-0"></a></h3>
+<p>The updated data from Prem et al. (2021) has been added (<a href="https://github.com/bisaloo/contactdata/issues/4" class="external-link">#4</a>). This results in a large number of cascading changes, including some breaking changes, detailed below.</p>
+<div class="section level4">
+<h4 id="breaking-changes-1-0-0">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-1-0-0"></a></h4>
+<ul><li>The new default returns data from the updated dataset. This means that any re-run of code written with previous versions of contactdata will return a different result</li>
+<li>Arguments in <code><a href="../reference/contact_df_countries.html">contact_df_countries()</a></code> have been removed and replaced by <code>...</code> to increase flexibility. This is only an interface change and does not modify the behaviour since all arguments were already forwarded to <code><a href="../reference/contact_matrix.html">contact_matrix()</a></code>.</li>
+</ul></div>
+<div class="section level4">
+<h4 id="non-breaking-changes-1-0-0">Non-breaking changes<a class="anchor" aria-label="anchor" href="#non-breaking-changes-1-0-0"></a></h4>
+<ul><li>
+<code><a href="../reference/list_countries.html">list_countries()</a></code> and <code><a href="../reference/contact_matrix.html">contact_matrix()</a></code> now have two additional arguments:
+<ul><li>
+<code>geographic_setting</code>, which specifies if you’d like to get the contact data from a <code>"rural"</code>, <code>"urban"</code> setting, or from <code>"all"</code> settings.</li>
+<li>
+<code>data_source</code>, which indicates if the data should be extracted from Prem et al. (2017) or Prem et al. (2021)</li>
+</ul></li>
+</ul></div>
+</div>
+</div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2" id="contactdata-02">contactdata 0.2<a class="anchor" aria-label="anchor" href="#contactdata-02"></a></h2>
 <ul><li>Addition of a new function <code><a href="../reference/age_df_countries.html">age_df_countries()</a></code> to get population by age for all the countries for which we provide contact data. This is motivated by the fact that models using contact data by age will almost surely need population data by age as well.</li>

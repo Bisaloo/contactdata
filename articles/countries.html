@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>List of included countries • contactdata</title>
+<title>List of included regions • contactdata</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
-<meta property="og:title" content="List of included countries">
+<meta property="og:title" content="List of included regions">
 <meta property="og:description" content="contactdata">
 <meta property="og:image" content="https://bisaloo.github.io/contactdata/reference/figures/logo.png">
 <meta property="og:image:alt" content="Two hands locked in a handshake">
@@ -45,7 +45,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">contactdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
       </span>
     </div>
 
@@ -62,7 +62,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/countries.html">List of included countries</a>
+      <a href="../articles/countries.html">List of included regions</a>
     </li>
     <li>
       <a href="../articles/visualise_age.html">Visualise age pyramids</a>
@@ -96,11 +96,11 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>List of included countries</h1>
+      <h1 data-toc-skip>List of included regions</h1>
                         <h4 data-toc-skip class="author">Hugo
 Gruson</h4>
             
-            <h4 data-toc-skip class="date">2023-01-31</h4>
+            <h4 data-toc-skip class="date">2023-02-09</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/bisaloo/contactdata/blob/HEAD/vignettes/countries.Rmd" class="external-link"><code>vignettes/countries.Rmd</code></a></small>
       <div class="hidden name"><code>countries.Rmd</code></div>
@@ -111,17 +111,25 @@ Gruson</h4>
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://bisaloo.github.io/contactdata/">contactdata</a></span><span class="op">)</span></span></code></pre></div>
-<p>The data included in this package comes from the article</p>
+<p>The data included in this package comes from two articles</p>
 <blockquote>
 <p>Kiesha Prem, Alex R. Cook, Mark Jit, <em>Projecting social contact
 matrices in 152 countries using contact surveys and demographic
 data</em>, PLoS Comp. Biol. (2017), <a href="https://doi.org/10.1371/journal.pcbi.1005697" class="external-link uri">https://doi.org/10.1371/journal.pcbi.1005697</a>.</p>
 </blockquote>
-<p>and as indicated by the title, not all countries were included.</p>
+<p>and</p>
+<blockquote>
+<p>Kiesha Prem, Kevin van Zandvoort, Petra Klepac, Rosalind M. Eggo,
+Nicholas G. Davies, CMMID COVID-19 Working Group, Alex R. Cook, Mark
+Jit, <em>Projecting contact matrices in 177 geographical regions: An
+update and comparison with empirical data for the COVID-19 era</em>,
+PLoS Comp. Biol. (2021), <a href="https://doi.org/10.1371/journal.pcbi.1009098" class="external-link uri">https://doi.org/10.1371/journal.pcbi.1009098</a>.</p>
+</blockquote>
+<p>and as indicated by the titles, not all regions were included.</p>
 <p>The full list is available with the <code><a href="../reference/list_countries.html">list_countries()</a></code>
 function:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="op">(</span><span class="va">all_contacts</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/list_countries.html">list_countries</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="op">(</span><span class="va">all_countries_2017</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/list_countries.html">list_countries</a></span><span class="op">(</span>data_source <span class="op">=</span> <span class="fl">2017</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   [1] "Albania"              "Algeria"              "Andorra"             </span></span>
 <span><span class="co">#&gt;   [4] "Antigua &amp; Barbuda"    "Argentina"            "Armenia"             </span></span>
 <span><span class="co">#&gt;   [7] "Australia"            "Austria"              "Azerbaijan"          </span></span>
@@ -172,18 +180,111 @@ function:</p>
 <span><span class="co">#&gt; [142] "UK"                   "Tanzania"             "US"                  </span></span>
 <span><span class="co">#&gt; [145] "Uruguay"              "Uzbekistan"           "Vanuatu"             </span></span>
 <span><span class="co">#&gt; [148] "Venezuela"            "Vietnam"              "Yemen"               </span></span>
-<span><span class="co">#&gt; [151] "Zambia"               "Zimbabwe"</span></span></code></pre></div>
+<span><span class="co">#&gt; [151] "Zambia"               "Zimbabwe"</span></span>
+<span><span class="op">(</span><span class="va">all_countries_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/list_countries.html">list_countries</a></span><span class="op">(</span>data_source <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   [1] "Afghanistan"              "Angola"                  </span></span>
+<span><span class="co">#&gt;   [3] "Albania"                  "United Arab Emirates"    </span></span>
+<span><span class="co">#&gt;   [5] "Argentina"                "Armenia"                 </span></span>
+<span><span class="co">#&gt;   [7] "Austria"                  "Azerbaijan"              </span></span>
+<span><span class="co">#&gt;   [9] "Burundi"                  "Belgium"                 </span></span>
+<span><span class="co">#&gt;  [11] "Benin"                    "Burkina Faso"            </span></span>
+<span><span class="co">#&gt;  [13] "Bangladesh"               "Bulgaria"                </span></span>
+<span><span class="co">#&gt;  [15] "Bahrain"                  "Bahamas"                 </span></span>
+<span><span class="co">#&gt;  [17] "Bosnia"                   "Belarus"                 </span></span>
+<span><span class="co">#&gt;  [19] "Belize"                   "Bolivia"                 </span></span>
+<span><span class="co">#&gt;  [21] "Brazil"                   "Barbados"                </span></span>
+<span><span class="co">#&gt;  [23] "Brunei"                   "Bhutan"                  </span></span>
+<span><span class="co">#&gt;  [25] "Botswana"                 "Central African Republic"</span></span>
+<span><span class="co">#&gt;  [27] "Canada"                   "Switzerland"             </span></span>
+<span><span class="co">#&gt;  [29] "Chile"                    "China"                   </span></span>
+<span><span class="co">#&gt;  [31] "Côte d’Ivoire"            "Cameroon"                </span></span>
+<span><span class="co">#&gt;  [33] "Congo - Kinshasa"         "Congo - Brazzaville"     </span></span>
+<span><span class="co">#&gt;  [35] "Colombia"                 "Comoros"                 </span></span>
+<span><span class="co">#&gt;  [37] "Cape Verde"               "Costa Rica"              </span></span>
+<span><span class="co">#&gt;  [39] "Cuba"                     "Cyprus"                  </span></span>
+<span><span class="co">#&gt;  [41] "Czechia"                  "Germany"                 </span></span>
+<span><span class="co">#&gt;  [43] "Djibouti"                 "Denmark"                 </span></span>
+<span><span class="co">#&gt;  [45] "Dominican Republic"       "Algeria"                 </span></span>
+<span><span class="co">#&gt;  [47] "Ecuador"                  "Egypt"                   </span></span>
+<span><span class="co">#&gt;  [49] "Eritrea"                  "Spain"                   </span></span>
+<span><span class="co">#&gt;  [51] "Estonia"                  "Ethiopia"                </span></span>
+<span><span class="co">#&gt;  [53] "Finland"                  "Fiji"                    </span></span>
+<span><span class="co">#&gt;  [55] "France"                   "Gabon"                   </span></span>
+<span><span class="co">#&gt;  [57] "UK"                       "Georgia"                 </span></span>
+<span><span class="co">#&gt;  [59] "Ghana"                    "Guinea"                  </span></span>
+<span><span class="co">#&gt;  [61] "Gambia"                   "Guinea-Bissau"           </span></span>
+<span><span class="co">#&gt;  [63] "Equatorial Guinea"        "Greece"                  </span></span>
+<span><span class="co">#&gt;  [65] "Guatemala"                "Guyana"                  </span></span>
+<span><span class="co">#&gt;  [67] "Hong Kong"                "Honduras"                </span></span>
+<span><span class="co">#&gt;  [69] "Croatia"                  "Hungary"                 </span></span>
+<span><span class="co">#&gt;  [71] "Indonesia"                "India"                   </span></span>
+<span><span class="co">#&gt;  [73] "Ireland"                  "Iran"                    </span></span>
+<span><span class="co">#&gt;  [75] "Iraq"                     "Iceland"                 </span></span>
+<span><span class="co">#&gt;  [77] "Israel"                   "Italy"                   </span></span>
+<span><span class="co">#&gt;  [79] "Jamaica"                  "Jordan"                  </span></span>
+<span><span class="co">#&gt;  [81] "Kazakhstan"               "Kenya"                   </span></span>
+<span><span class="co">#&gt;  [83] "Kyrgyzstan"               "Cambodia"                </span></span>
+<span><span class="co">#&gt;  [85] "South Korea"              "Kuwait"                  </span></span>
+<span><span class="co">#&gt;  [87] "Laos"                     "Liberia"                 </span></span>
+<span><span class="co">#&gt;  [89] "Libya"                    "St. Lucia"               </span></span>
+<span><span class="co">#&gt;  [91] "Sri Lanka"                "Lesotho"                 </span></span>
+<span><span class="co">#&gt;  [93] "Lithuania"                "Luxembourg"              </span></span>
+<span><span class="co">#&gt;  [95] "Latvia"                   "Macao"                   </span></span>
+<span><span class="co">#&gt;  [97] "Morocco"                  "Moldova"                 </span></span>
+<span><span class="co">#&gt;  [99] "Madagascar"               "Maldives"                </span></span>
+<span><span class="co">#&gt; [101] "Mexico"                   "North Macedonia"         </span></span>
+<span><span class="co">#&gt; [103] "Mali"                     "Malta"                   </span></span>
+<span><span class="co">#&gt; [105] "Myanmar"                  "Montenegro"              </span></span>
+<span><span class="co">#&gt; [107] "Mongolia"                 "Mozambique"              </span></span>
+<span><span class="co">#&gt; [109] "Mauritania"               "Mauritius"               </span></span>
+<span><span class="co">#&gt; [111] "Malawi"                   "Malaysia"                </span></span>
+<span><span class="co">#&gt; [113] "Namibia"                  "Niger"                   </span></span>
+<span><span class="co">#&gt; [115] "Nigeria"                  "Nicaragua"               </span></span>
+<span><span class="co">#&gt; [117] "Netherlands"              "Norway"                  </span></span>
+<span><span class="co">#&gt; [119] "Nepal"                    "New Zealand"             </span></span>
+<span><span class="co">#&gt; [121] "Oman"                     "Pakistan"                </span></span>
+<span><span class="co">#&gt; [123] "Panama"                   "Peru"                    </span></span>
+<span><span class="co">#&gt; [125] "Philippines"              "Papua New Guinea"        </span></span>
+<span><span class="co">#&gt; [127] "Poland"                   "Puerto Rico"             </span></span>
+<span><span class="co">#&gt; [129] "North Korea"              "Portugal"                </span></span>
+<span><span class="co">#&gt; [131] "Paraguay"                 "Palestine"               </span></span>
+<span><span class="co">#&gt; [133] "Qatar"                    "Romania"                 </span></span>
+<span><span class="co">#&gt; [135] "Russia"                   "Rwanda"                  </span></span>
+<span><span class="co">#&gt; [137] "Saudi Arabia"             "Sudan"                   </span></span>
+<span><span class="co">#&gt; [139] "Senegal"                  "Singapore"               </span></span>
+<span><span class="co">#&gt; [141] "Solomon Islands"          "Sierra Leone"            </span></span>
+<span><span class="co">#&gt; [143] "El Salvador"              "Serbia"                  </span></span>
+<span><span class="co">#&gt; [145] "South Sudan"              "São Tomé &amp; Príncipe"     </span></span>
+<span><span class="co">#&gt; [147] "Suriname"                 "Slovakia"                </span></span>
+<span><span class="co">#&gt; [149] "Slovenia"                 "Sweden"                  </span></span>
+<span><span class="co">#&gt; [151] "Eswatini"                 "Syria"                   </span></span>
+<span><span class="co">#&gt; [153] "Chad"                     "Togo"                    </span></span>
+<span><span class="co">#&gt; [155] "Thailand"                 "Tajikistan"              </span></span>
+<span><span class="co">#&gt; [157] "Turkmenistan"             "Timor-Leste"             </span></span>
+<span><span class="co">#&gt; [159] "Tonga"                    "Trinidad &amp; Tobago"       </span></span>
+<span><span class="co">#&gt; [161] "Tunisia"                  "Turkey"                  </span></span>
+<span><span class="co">#&gt; [163] "Tanzania"                 "Uganda"                  </span></span>
+<span><span class="co">#&gt; [165] "Ukraine"                  "Uruguay"                 </span></span>
+<span><span class="co">#&gt; [167] "US"                       "Uzbekistan"              </span></span>
+<span><span class="co">#&gt; [169] "St. Vincent &amp; Grenadines" "Venezuela"               </span></span>
+<span><span class="co">#&gt; [171] "Vietnam"                  "Vanuatu"                 </span></span>
+<span><span class="co">#&gt; [173] "Samoa"                    "Yemen"                   </span></span>
+<span><span class="co">#&gt; [175] "South Africa"             "Zambia"                  </span></span>
+<span><span class="co">#&gt; [177] "Zimbabwe"</span></span></code></pre></div>
 <p>Below is a map that may help you find out which countries are absent
 from the dataset:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">wlrd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/map_data.html" class="external-link">map_data</a></span><span class="op">(</span><span class="st">"world"</span><span class="op">)</span></span>
-<span><span class="va">wlrd</span><span class="op">$</span><span class="va">region</span> <span class="op">&lt;-</span> <span class="fu">countrycode</span><span class="fu">::</span><span class="fu"><a href="https://vincentarelbundock.github.io/countrycode/reference/countryname.html" class="external-link">countryname</a></span><span class="op">(</span><span class="va">wlrd</span><span class="op">$</span><span class="va">region</span><span class="op">)</span></span>
+<span><span class="va">wrld</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/map_data.html" class="external-link">map_data</a></span><span class="op">(</span><span class="st">"world"</span><span class="op">)</span></span>
+<span><span class="va">wrld</span><span class="op">$</span><span class="va">region</span> <span class="op">&lt;-</span> <span class="fu">countrycode</span><span class="fu">::</span><span class="fu"><a href="https://vincentarelbundock.github.io/countrycode/reference/countryname.html" class="external-link">countryname</a></span><span class="op">(</span><span class="va">wrld</span><span class="op">$</span><span class="va">region</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">wlrd</span><span class="op">$</span><span class="va">included</span> <span class="op">&lt;-</span> <span class="va">wlrd</span><span class="op">$</span><span class="va">region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">all_contacts</span></span>
+<span><span class="va">wrld</span><span class="op">$</span><span class="va">included</span> <span class="op">&lt;-</span> <span class="st">"Not included"</span></span>
+<span><span class="va">wrld</span><span class="op">$</span><span class="va">included</span><span class="op">[</span><span class="va">wrld</span><span class="op">$</span><span class="va">region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">all_countries_2020</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"2020"</span> </span>
+<span><span class="va">wrld</span><span class="op">$</span><span class="va">included</span><span class="op">[</span><span class="va">wrld</span><span class="op">$</span><span class="va">region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">all_countries_2017</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"2017 &amp; 2020"</span></span>
 <span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">wlrd</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">long</span>, <span class="va">lat</span>, group <span class="op">=</span> <span class="va">group</span>, fill <span class="op">=</span> <span class="va">included</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">wrld</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">long</span>, <span class="va">lat</span>, group <span class="op">=</span> <span class="va">group</span>, fill <span class="op">=</span> <span class="va">included</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_polygon.html" class="external-link">geom_polygon</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_fixed.html" class="external-link">coord_equal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>

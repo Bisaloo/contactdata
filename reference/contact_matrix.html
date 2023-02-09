@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">contactdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
       </span>
     </div>
 
@@ -32,7 +32,7 @@
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
-      <a href="../articles/countries.html">List of included countries</a>
+      <a href="../articles/countries.html">List of included regions</a>
     </li>
     <li>
       <a href="../articles/visualise_age.html">Visualise age pyramids</a>
@@ -69,7 +69,12 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">contact_matrix</span><span class="op">(</span><span class="va">country</span>, location <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"all"</span>, <span class="st">"home"</span>, <span class="st">"school"</span>, <span class="st">"work"</span>, <span class="st">"other"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">contact_matrix</span><span class="op">(</span></span>
+<span>  <span class="va">country</span>,</span>
+<span>  location <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"all"</span>, <span class="st">"home"</span>, <span class="st">"school"</span>, <span class="st">"work"</span>, <span class="st">"other"</span><span class="op">)</span>,</span>
+<span>  geographic_setting <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"all"</span>, <span class="st">"rural"</span>, <span class="st">"urban"</span><span class="op">)</span>,</span>
+<span>  data_source <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"2020"</span>, <span class="st">"2017"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -80,7 +85,16 @@ data.</p></dd>
 
 
 <dt>location</dt>
-<dd><p>Character. One of "all", "home", "school", "work" or "other".</p></dd>
+<dd><p>Character. One of "all" (default), "home", "school", "work"
+or "other".</p></dd>
+
+
+<dt>geographic_setting</dt>
+<dd><p>Character. One of "all" (default), "rural", "urban"</p></dd>
+
+
+<dt>data_source</dt>
+<dd><p>Character. Either "202O" (default) or "2017"</p></dd>
 
 </dl></div>
     <div id="value">
@@ -92,135 +106,90 @@ the different age classes for a given country.</p>
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>Kiesha Prem, Alex R. Cook, Mark Jit, Projecting social contact
-matrices in 152 countries using contact surveys and demographic data, PLoS
+    <p>Kiesha Prem, Alex R. Cook, Mark Jit, <em>Projecting social contact
+matrices in 152 countries using contact surveys and demographic data</em>, PLoS
 Comp. Biol. (2017), <a href="https://doi.org/10.1371/journal.pcbi.1005697" class="external-link">doi:10.1371/journal.pcbi.1005697</a></p>
+<p>Kiesha Prem, Kevin van Zandvoort, Petra Klepac, Rosalind M. Eggo,
+Nicholas G. Davies, CMMID COVID-19 Working Group, Alex R. Cook, Mark Jit,
+<em>Projecting contact matrices in 177 geographical regions: An update and
+comparison with empirical data for the COVID-19 era</em>, PLoS Comp. Biol.
+(2021), <a href="https://doi.org/10.1371/journal.pcbi.1009098" class="external-link">doi:10.1371/journal.pcbi.1009098</a>
+.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">contact_matrix</span><span class="op">(</span><span class="st">"France"</span>, location <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           00_05     05_10     10_15     15_20     20_25     25_30     30_35</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 00_05 3.8049208 1.1064463 0.4119145 0.2553693 0.3417530 0.7532100 1.2090488</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 05_10 1.0620240 5.0325631 1.0108210 0.2729936 0.1637277 0.4151037 0.9207158</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10_15 0.2383228 1.5384390 6.9859632 0.8459108 0.2870553 0.2443827 0.4032533</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15_20 0.1242916 0.3084664 2.3013378 7.8316731 1.3599526 0.6511973 0.5309225</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20_25 0.1997494 0.1682122 0.2555462 2.1654802 3.9337904 1.7076407 1.1677744</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25_30 0.5331867 0.2486300 0.1435870 0.7309595 1.9436259 3.4581082 1.7769048</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30_35 0.7222459 0.8480973 0.5299038 0.4228065 1.0050076 1.7204472 2.9192993</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35_40 0.7037954 1.0721441 0.8366342 0.6832771 0.7646973 1.4071985 1.7597999</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40_45 0.3095332 0.6566442 0.9827524 1.1093668 0.9235031 1.2518923 1.5914371</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45_50 0.4058094 0.4671793 0.6117632 1.5367229 0.9454052 0.9938984 1.2592405</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50_55 0.2517178 0.5947777 0.8288772 1.2016733 1.0188128 1.2906068 1.1792561</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55_60 0.5424359 0.6711899 0.5736708 0.7492978 0.6135626 0.9317515 0.9175372</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60_65 0.3961294 0.3629084 0.2566179 0.3614150 0.3387789 0.5080470 0.6393848</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65_70 0.1980189 0.3134375 0.2568708 0.1574851 0.2121279 0.3071351 0.4501078</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70_75 0.1052495 0.2944891 0.3077932 0.3553412 0.1558914 0.2445032 0.2530902</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75_80 0.2435584 0.3171220 0.4522256 0.3598813 0.1542999 0.1882229 0.3050821</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           35_40     40_45     45_50     50_55     55_60      60_65      65_70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 00_05 1.0419960 0.4955829 0.3104594 0.3070544 0.2722105 0.18633754 0.12804520</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 05_10 1.1384301 0.8451808 0.3314044 0.2073083 0.1854381 0.17691472 0.11164899</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10_15 0.8269250 1.0806856 0.5704767 0.2657533 0.1466135 0.10152928 0.08817052</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15_20 0.7621321 1.0248384 1.0489743 0.4785021 0.1639009 0.07173157 0.05282605</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20_25 1.1331411 0.9700452 1.2702652 0.8133999 0.3272061 0.08382776 0.04576510</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25_30 1.4707826 1.2626267 0.9969784 0.9610877 0.3574627 0.11253397 0.05165248</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30_35 1.8937794 1.4574822 1.1351731 0.8100567 0.4053920 0.18410812 0.08541583</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35_40 3.2108263 2.0977977 1.3443554 0.9195016 0.3641096 0.25969059 0.15240004</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40_45 1.8766171 2.9541130 1.6818322 1.1128901 0.2732150 0.18353558 0.11084809</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45_50 1.4654930 1.5731579 2.1964738 1.0863042 0.3406847 0.15129942 0.08636681</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50_55 1.2145400 1.5942381 1.7430635 1.9184501 0.6491669 0.26726729 0.11850585</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55_60 0.7479099 0.7927704 0.6808703 0.9229155 1.4619218 0.51294863 0.21825949</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60_65 0.6940436 0.5234400 0.4162769 0.4414520 0.6750623 1.40597284 0.42649139</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65_70 0.4543158 0.4253709 0.3023152 0.3242779 0.4404185 0.51803705 1.00304348</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70_75 0.4770518 0.5149822 0.4340009 0.3392186 0.3381533 0.65997723 0.61920693</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75_80 0.3824259 0.4514450 0.4428716 0.5388023 0.3440813 0.27980028 0.36715407</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            70_75      75_80</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 00_05 0.08780229 0.05386407</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 05_10 0.05825985 0.05311071</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10_15 0.06970996 0.06966683</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15_20 0.03453706 0.02613884</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20_25 0.05447291 0.05237283</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25_30 0.03057661 0.02361016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30_35 0.04700946 0.05253904</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35_40 0.09805799 0.04637476</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40_45 0.08697388 0.04801201</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45_50 0.08310938 0.08187873</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50_55 0.08806304 0.09026068</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55_60 0.11994582 0.09467785</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60_65 0.26297656 0.12855394</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65_70 0.27590642 0.13898285</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70_75 0.97407644 0.32576427</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75_80 0.36754549 0.64291815</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         00_05   05_10   10_15   15_20   20_25   25_30   30_35   35_40   40_45</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 00_05 2.78349 1.09714 0.59766 0.42514 0.54475 0.83666 1.12491 1.01569 0.63464</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 05_10 1.33122 6.29510 1.27272 0.46477 0.35261 0.68506 1.02618 1.13031 0.99165</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10_15 0.39897 2.22464 9.84713 1.05305 0.45699 0.50444 0.66377 1.01329 1.16385</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15_20 0.30098 0.51971 3.20301 9.61013 1.15339 0.63465 0.54228 0.81646 0.95410</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20_25 0.37971 0.37347 0.44479 2.04600 3.20611 1.27444 0.82373 0.68958 0.68682</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25_30 0.72782 0.46144 0.35097 0.79856 1.67674 2.60892 1.49240 1.13783 0.96147</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30_35 0.79200 0.88463 0.67619 0.47619 0.92299 1.40768 2.20929 1.48891 1.13288</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35_40 0.74890 1.07171 0.88910 0.75047 0.72376 1.16507 1.45639 2.36740 1.65545</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40_45 0.51058 0.76735 1.06267 0.90561 0.87963 1.04440 1.34928 1.54511 2.22415</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45_50 0.33981 0.42638 0.67853 1.08318 0.90254 0.92989 1.09819 1.26458 1.37553</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50_55 0.31072 0.36274 0.59937 0.83731 1.00352 1.19355 1.06834 1.05459 1.36231</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55_60 0.39864 0.42351 0.50890 0.54609 0.71051 1.02643 1.13779 0.92754 1.01287</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60_65 0.38587 0.36993 0.34816 0.37182 0.48445 0.66960 0.78982 0.84058 0.74527</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65_70 0.29379 0.37405 0.33048 0.29065 0.37366 0.48083 0.65580 0.67714 0.68240</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70_75 0.20554 0.34026 0.38589 0.45420 0.31254 0.41868 0.44131 0.65480 0.77630</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75_80 0.26897 0.27668 0.35823 0.32506 0.26700 0.28903 0.42676 0.45384 0.51002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         45_50   50_55   55_60   60_65   65_70   70_75   75_80</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 00_05 0.50544 0.52665 0.49783 0.39153 0.33717 0.26006 0.17979</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 05_10 0.60923 0.49424 0.44941 0.41570 0.33297 0.24289 0.17912</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10_15 0.83145 0.55457 0.38642 0.30138 0.29915 0.26661 0.19652</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15_20 1.05109 0.63727 0.39461 0.28397 0.24315 0.19886 0.15800</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20_25 0.97167 0.70034 0.48631 0.29828 0.22838 0.24443 0.18815</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25_30 0.91936 0.95941 0.62849 0.43022 0.29327 0.22153 0.16448</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30_35 0.95357 0.83514 0.72204 0.51731 0.34141 0.23656 0.19808</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35_40 1.17352 0.91423 0.64593 0.56372 0.43426 0.33740 0.20415</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40_45 1.46235 1.06357 0.54927 0.52157 0.41118 0.33389 0.24101</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45_50 1.93332 1.16615 0.68328 0.45318 0.34997 0.32903 0.25424</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50_55 1.58509 1.70873 1.04120 0.59368 0.35534 0.33119 0.26512</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55_60 0.93730 1.19991 1.48381 0.82802 0.48857 0.32124 0.23713</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60_65 0.67297 0.67140 0.88300 1.21412 0.69313 0.50550 0.25726</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65_70 0.52748 0.55506 0.65119 0.74149 1.13052 0.52794 0.27354</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70_75 0.69078 0.54272 0.51067 0.89222 0.93588 1.25788 0.39716</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75_80 0.66095 0.66008 0.47413 0.41622 0.59534 0.62970 0.44627</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">contact_matrix</span><span class="op">(</span><span class="st">"Belgium"</span>, location <span class="op">=</span> <span class="st">"school"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>               00_05         05_10         10_15         15_20         20_25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 00_05  2.231562e+00  2.188485e-01  3.900767e-01  2.688331e-02  1.032931e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 05_10  2.472377e-01  3.117592e+00  2.057124e-01  1.607709e-02  9.661761e-19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10_15  7.631087e-02  1.573915e-01  4.195039e+00  1.005322e-01  6.057941e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15_20  1.667880e-01  1.188428e-01  5.047092e-01  4.047474e+00  6.130302e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20_25  3.797864e-27  3.165459e-30  1.110084e-64  2.179770e-01  2.186010e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25_30  5.860132e-52  3.296817e-44  1.510324e-61  8.547018e-39  9.412904e-34</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30_35  5.880712e-02  1.027104e-01  1.469999e-45  5.640773e-23  5.685250e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35_40  4.086717e-01  1.705787e-16  1.546249e-01  1.873899e-51  3.260699e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40_45  1.414248e-01  7.960342e-45  2.448759e-57  3.152303e-02  7.128404e-43</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45_50  5.537966e-63 9.859117e-104  1.576919e-49  4.952548e-02  1.134950e-38</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50_55  3.252134e-53 8.848808e-134  3.248688e-33  5.037806e-85 2.965335e-101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55_60  2.937304e-02  2.816686e-02  7.384065e-02  2.832956e-02 9.790374e-127</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60_65  6.079235e-69  1.214646e-47  3.733487e-02  7.817605e-75 4.152412e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65_70 1.740252e-141 9.780961e-109  2.514760e-99  5.718298e-89 2.861488e-147</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70_75 5.395875e-124 5.013824e-125 9.620625e-104 5.056621e-123 4.011300e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75_80 1.641101e-116 6.770031e-123 1.936422e-116 1.190831e-119 4.543822e-119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>               25_30        30_35        35_40        40_45        45_50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 00_05  1.738315e-01 2.889025e-01 7.389466e-02 4.453167e-02 4.535417e-14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 05_10  6.256750e-02 7.893416e-02 7.008973e-02 1.198746e-01 7.160435e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10_15  5.682804e-02 8.798125e-03 7.864829e-02 6.385997e-02 1.542912e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15_20  5.795102e-02 1.697930e-25 1.325180e-01 3.960846e-02 1.105025e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20_25  1.046959e-02 2.013059e-28 3.447825e-22 2.661493e-02 1.153428e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25_30  3.074052e-01 2.812532e-44 1.864332e-36 3.672584e-54 5.624769e-62</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30_35  8.176267e-03 3.597535e-02 5.285380e-02 5.494858e-02 8.736286e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35_40  1.851403e-01 8.048927e-02 6.714555e-02 8.853332e-02 3.042403e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40_45  4.827482e-02 8.277887e-02 1.984801e-02 9.134568e-02 2.011418e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45_50  4.636087e-65 1.108271e-25 8.792324e-02 6.012818e-51 1.431795e-46</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50_55 5.525322e-133 8.965046e-43 2.650957e-02 2.715616e-02 2.235838e-43</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55_60 2.047690e-126 5.069021e-02 1.980646e-02 5.330642e-34 1.999003e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60_65  1.724260e-81 1.789528e-78 1.359651e-01 3.079255e-02 2.328519e-35</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65_70 1.387484e-166 4.157155e-51 8.389592e-62 4.998088e-43 5.506727e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70_75  2.139350e-97 7.074939e-87 1.661226e-02 1.674010e-02 4.565433e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75_80 4.235386e-126 3.939033e-76 1.222147e-94 1.245041e-86 2.734155e-67</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              50_55        55_60         60_65         65_70         70_75</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 00_05 6.800606e-02 5.251640e-48  1.133523e-90 3.079103e-104  2.003412e-75</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 05_10 4.988977e-02 1.683643e-02  6.127720e-99  2.056286e-03  1.979552e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10_15 4.046869e-02 1.982978e-02  3.923117e-03  9.768538e-53  8.221526e-43</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15_20 5.163183e-02 2.154750e-02 1.101372e-102  5.472303e-80 7.378277e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20_25 1.562146e-40 2.238559e-79  7.644916e-43 2.398178e-139 2.483573e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25_30 7.031231e-84 3.013535e-61 5.939161e-126  4.614686e-02  1.654861e-93</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30_35 2.153146e-02 3.187020e-61  4.323460e-03  1.080235e-99  2.525521e-70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35_40 4.654946e-31 8.013485e-03  8.639725e-79 1.496899e-107 9.645247e-135</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40_45 5.053899e-02 1.479312e-02  7.719070e-43  2.760307e-88 5.801369e-138</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45_50 1.009745e-60 1.585206e-93  1.558346e-02 5.605592e-134 2.724760e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50_55 1.530534e-81 2.273165e-42  7.685372e-96  6.001953e-62 1.796864e-131</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55_60 4.992229e-02 4.560906e-84  1.106032e-02  6.447958e-87 8.829809e-111</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60_65 2.091794e-41 1.744472e-67 1.310905e-115 1.327183e-114 1.677496e-139</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65_70 5.154972e-51 1.628736e-87  1.082476e-89  2.923436e-83  1.683342e-64</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70_75 4.590242e-02 4.587703e-02  1.664027e-02  1.659724e-02  1.654680e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75_80 2.462743e-65 3.462799e-68  1.218998e-76  8.387174e-76  1.051333e-68</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>               75_80</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 00_05 9.377263e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 05_10  2.368802e-85</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10_15  2.315574e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15_20 3.734503e-127</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20_25  5.385756e-97</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25_30  1.219396e-96</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30_35 1.878419e-137</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35_40 3.375347e-129</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40_45 9.617777e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45_50 1.262355e-111</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50_55 4.112569e-130</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55_60 5.214644e-120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60_65 6.424454e-111</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65_70  5.775052e-74</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70_75  4.622517e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75_80  1.014157e-96</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         00_05   05_10   10_15   15_20   20_25   25_30   30_35   35_40   40_45</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 00_05 2.82093 0.92170 0.48046 0.02891 0.03428 0.42758 0.65892 0.14161 0.08598</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 05_10 0.17441 4.25239 0.32984 0.02286 0.00000 0.12828 0.16429 0.17113 0.28740</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10_15 0.10457 0.17891 7.33501 0.53665 0.22516 0.14806 0.02504 0.29424 0.14234</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15_20 0.35473 0.26124 0.32568 8.49234 0.65227 0.22267 0.00000 0.38819 0.20268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20_25 0.00000 0.00000 0.00000 0.32447 0.51299 0.06472 0.00000 0.00000 0.02545</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25_30 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.01296 0.00515 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30_35 0.02412 0.03038 0.00000 0.00000 0.00335 0.00430 0.00418 0.01719 0.02419</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35_40 0.09168 0.00000 0.03160 0.00000 0.01454 0.07513 0.04337 0.02606 0.03884</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40_45 0.00000 0.00000 0.00000 0.05836 0.00000 0.00000 0.00000 0.00000 0.05427</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45_50 0.00000 0.00000 0.00000 0.01057 0.00000 0.00000 0.00000 0.02775 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50_55 0.00000 0.00000 0.02082 0.00747 0.00000 0.00000 0.00000 0.00793 0.00778</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55_60 0.01693 0.01664 0.00000 0.00000 0.00000 0.00000 0.04766 0.01915 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60_65 0.00000 0.00000 0.01085 0.00000 0.00000 0.00000 0.00000 0.05103 0.01057</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65_70 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00047 0.00046</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70_75 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75_80 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         45_50   50_55   55_60   60_65   65_70   70_75   75_80</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 00_05 0.00000 0.14394 0.00000 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 05_10 0.24403 0.12990 0.05876 0.00000 0.02149 0.02046 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10_15 0.26037 0.10748 0.05924 0.02357 0.00000 0.00000 0.02104</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15_20 0.42162 0.20215 0.10576 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20_25 0.00981 0.00000 0.00000 0.00000 0.00916 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25_30 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30_35 0.00380 0.01012 0.00000 0.00387 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35_40 0.00901 0.00352 0.00894 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40_45 0.05050 0.05626 0.00000 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45_50 0.00000 0.00000 0.00000 0.01010 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50_55 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55_60 0.01683 0.04592 0.00000 0.01731 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60_65 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65_70 0.00217 0.00129 0.00133 0.00048 0.00047 0.00049 0.00132</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70_75 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75_80 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
