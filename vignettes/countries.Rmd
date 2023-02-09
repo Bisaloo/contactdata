@@ -50,7 +50,7 @@ dataset:
 library(ggplot2)
 
 wrld <- map_data("world")
-wrld$region <- countrycode::countryname(wlrd$region)
+wrld$region <- countrycode::countryname(wrld$region)
 
 wrld$included <- "Not included"
 wrld$included[wrld$region %in% all_countries_2020] <- "2020" 
