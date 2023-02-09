@@ -7,7 +7,7 @@
 contact_matrix(
   country,
   location = c("all", "home", "school", "work", "other"),
-  setting = c("all", "rural", "urban"),
+  geographic_setting = c("all", "rural", "urban"),
   data_source = c("2020", "2017")
 )
 }
@@ -18,7 +18,7 @@ data.}
 \item{location}{Character. One of "all" (default), "home", "school", "work"
 or "other".}
 
-\item{setting}{Character. One of "all" (default), "rural", "urban"}
+\item{geographic_setting}{Character. One of "all" (default), "rural", "urban"}
 
 \item{data_source}{Character. Either "202O" (default) or "2017"}
 }

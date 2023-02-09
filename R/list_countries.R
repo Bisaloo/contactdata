@@ -24,7 +24,7 @@
 #'   (2021), \doi{10.1371/journal.pcbi.1009098}.
 
 list_countries <- function(
-  setting = c("all", "rural", "urban"),
+  geographic_setting = c("all", "rural", "urban"),
   data_source = c("2020", "2017")
 ) {
 
@@ -32,15 +32,19 @@ list_countries <- function(
   data_source <- as.character(data_source)
   data_source <- match.arg(data_source)
 
-  if (data_source != "2020" & !missing(setting)) {
-    stop("`setting` is only defined for `data_source = 2020`", call. = FALSE)
+  if (data_source != "2020" & !missing(geographic_setting)) {
+    stop(
+      "`geographic_setting` is only defined for `data_source = 2020`",
+      call. = FALSE
+    )
   }
 
-  setting <- match.arg(setting)
+  geographic_setting <- match.arg(geographic_setting)
 
   all_contacts <- readRDS(
     system.file(
-      "extdata", paste0("contact_", data_source, "_all_", setting, ".rds"),
+      "extdata",
+      paste0("contact_", data_source, "_all_", geographic_setting, ".rds"),
       package = "contactdata"
     )
   )

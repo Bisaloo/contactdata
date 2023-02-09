@@ -4,7 +4,7 @@
 #'    data.
 #' @param location Character. One of "all" (default), "home", "school", "work"
 #'   or "other".
-#' @param setting Character. One of "all" (default), "rural", "urban"
+#' @param geographic_setting Character. One of "all" (default), "rural", "urban"
 #' @param data_source Character. Either "202O" (default) or "2017"
 #'
 #' @return A square (16 by 16) matrix containing the contact data between
@@ -22,7 +22,7 @@
 contact_matrix <- function(
   country,
   location = c("all", "home", "school", "work", "other"),
-  setting = c("all", "rural", "urban"),
+  geographic_setting = c("all", "rural", "urban"),
   data_source = c("2020", "2017")
 ) {
 
@@ -35,15 +35,19 @@ contact_matrix <- function(
   data_source <- as.character(data_source)
   data_source <- match.arg(data_source)
 
-  if (data_source != "2020" & !missing(setting)) {
-    stop("`setting` is only defined for `data_source = 2020`", call. = FALSE)
+  if (data_source != "2020" & !missing(geographic_setting)) {
+    stop(
+      "`geographic_setting` is only defined for `data_source = 2020`",
+      call. = FALSE
+    )
   }
 
-  setting <- match.arg(setting)
+  geographic_setting <- match.arg(geographic_setting)
 
   all <- readRDS(
     system.file(
-      "extdata", paste0("contact_", data_source, "_", location, "_", setting, ".rds"),
+      "extdata",
+      paste0("contact_", data_source, "_", location, "_", geographic_setting, ".rds"),
       package = "contactdata"
     )
   )
