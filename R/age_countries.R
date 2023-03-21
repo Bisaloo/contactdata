@@ -28,7 +28,7 @@ age_df_countries <- function(countries) {
   if (length(unknown_regions) != 0) {
     warning(
       "The following geographical regions are not included in the dataset:\n",
-      paste0(unknown_regions, collapse = ", "), "\n",
+      toString(unknown_regions), "\n",
       "Use the list_countries() function to get a list of all ",
       "geographical regions in the dataset.",
       call. = FALSE
