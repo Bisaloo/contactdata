@@ -40,7 +40,7 @@ contact_df_countries <- function(
     rownames(out) <- NULL
     colnames(out)[2] <- "contact"
     out$country <- countries[[i]]
-    out <- out[, c(4,3,1,2)]
+    out <- out[, c(4, 3, 1, 2)]
     return(out)
   })
 

@@ -5,7 +5,7 @@ test_that("contact_df_countries()", {
   res <- contact_df_countries(test_countries)
 
   expect_s3_class(res, "data.frame")
-  expect_identical(dim(res), c(16L*16L*length(test_countries), 4L))
+  expect_identical(dim(res), c(16L * 16L * length(test_countries), 4L))
   expect_named(res, c("country", "age_from", "age_to", "contact"))
   expect_type(res$country, "character")
   expect_type(res$age_from, "character")
