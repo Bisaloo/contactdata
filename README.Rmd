@@ -22,8 +22,8 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/Bisaloo/contactdata/branch/main/graph/badge.svg)](https://codecov.io/gh/Bisaloo/contactdata?branch=main)
 <!-- badges: end -->
 
-The goal of contactdata is to provide access to social contact data for 152
-countries. This data comes from
+The goal of contactdata is to provide access to social contact data for 177
+geographical regions. This data comes from
 
 > Kiesha Prem, Alex R. Cook, Mark Jit, *Projecting social contact matrices in 
 152 countries using contact surveys and demographic data*, PLoS Comp. Biol.
@@ -63,7 +63,7 @@ install.packages("contactdata", repos = "https://bisaloo.r-universe.dev")
 
 ## Example
 
-The most basic function allows you to get matrix data for a specific country:
+The most basic function allows you to get matrix data for a specific region:
 
 ```{r example}
 library(contactdata)
