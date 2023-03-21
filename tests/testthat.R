@@ -1,4 +1,4 @@
 library(testthat)
-library(contactdata)
+library(contactdata) # nolint
 
 test_check("contactdata")
