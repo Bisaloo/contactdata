@@ -18,7 +18,7 @@ files <- unzip("all_datasets.zip", unzip = "internal")
 
 library(fs)
 
-files <- file_move(files, gsub("locations_", "", files))
+files <- file_move(files, gsub("locations_", "", files, fixed = TRUE))
 files <- file_move(files, getwd())
 
 library(readxl)
