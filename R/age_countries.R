@@ -1,9 +1,10 @@
-#' Get a data.frame (in long format) of population by age for multiple countries
+#' Get a data.frame (in long format) of population by age for multiple
+#' geographical regions
 #'
 #' @inheritParams contact_df_countries
 #'
 #' @return A data.frame (in long format) with 3 columns:
-#'   * `country`: the country name
+#'   * `country`: the geographical region name
 #'   * `age`: the age group
 #'   * `population`: the number of people in this age group
 #'
@@ -26,10 +27,10 @@ age_df_countries <- function(countries) {
 
   if (length(unknown_countries) != 0) {
     warning(
-      "The following countries are not included in the dataset:\n",
+      "The following geographical regions are not included in the dataset:\n",
       paste0(unknown_countries, collapse = ", "), "\n",
       "Use the list_countries() function to get a list of all ",
-      "countries in the dataset.",
+      "geographical regions in the dataset.",
       call. = FALSE
     )
   }

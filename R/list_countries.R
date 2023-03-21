@@ -1,9 +1,9 @@
-#' Get the list of countries included in the dataset
+#' Get the list of geographical regions included in the dataset
 #'
 #' @inheritParams contact_matrix
 #'
-#' @return A character vector with the name of all countries included in the
-#'    dataset
+#' @return A character vector with the name of all geographical regions included
+#'   in the dataset
 #'
 #' @examples
 #' list_countries()
