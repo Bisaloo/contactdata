@@ -23,12 +23,12 @@ age_df_countries <- function(countries) {
                 package = "contactdata")
   )
 
-  unknown_countries <- countries[!countries %in% pop_byage$country]
+  unknown_regions <- countries[!countries %in% pop_byage$country]
 
-  if (length(unknown_countries) != 0) {
+  if (length(unknown_regions) != 0) {
     warning(
       "The following geographical regions are not included in the dataset:\n",
-      paste0(unknown_countries, collapse = ", "), "\n",
+      paste0(unknown_regions, collapse = ", "), "\n",
       "Use the list_countries() function to get a list of all ",
       "geographical regions in the dataset.",
       call. = FALSE
