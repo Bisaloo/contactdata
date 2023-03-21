@@ -35,7 +35,7 @@ contact_matrix <- function(
   data_source <- as.character(data_source)
   data_source <- match.arg(data_source)
 
-  if (data_source != "2020" & !missing(geographic_setting)) {
+  if (data_source != "2020" && !missing(geographic_setting)) {
     stop(
       "`geographic_setting` is only defined for `data_source = 2020`",
       call. = FALSE
