@@ -53,7 +53,7 @@ wrld <- map_data("world")
 wrld$region <- countrycode::countryname(wrld$region)
 
 wrld$included <- "Not included"
-wrld$included[wrld$region %in% all_regions_2020] <- "2020" 
+wrld$included[wrld$region %in% all_regions_2020] <- "2020"
 wrld$included[wrld$region %in% all_regions_2017] <- "2017 & 2020"
 
 

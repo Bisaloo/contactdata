@@ -26,7 +26,7 @@ test_that("All files have the correct lengths", {
       f <- readRDS(
         system.file("extdata", paste0("contact_2020_", l, "_", s, ".rds"), package = "contactdata")
       )
-     expect_length(f, 177)
+      expect_length(f, 177)
     }
 
     # 3 locations are missing because they don't have rural population (e.g.,
