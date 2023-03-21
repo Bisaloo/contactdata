@@ -15,7 +15,7 @@ all_regions <- unique(c(
 ))
 
 # From https://www2.census.gov/programs-surveys/international-programs/about/idb/idbzip.zip
-population_byage <- vroom::vroom("data-raw/idb5yr.all") %>%
+population_byage <- vroom::vroom(file.path("data-raw", "idb5yr.all")) %>%
   filter(`#YR` == "2020") %>%
   rename(region = NAME) %>%
   select(region, matches("^POP\\d+\\_\\d+$")) %>%
@@ -31,4 +31,7 @@ population_byage <- vroom::vroom("data-raw/idb5yr.all") %>%
   tidyr::pivot_longer(-region, names_to = "age", values_to = "population") %>%
   as.data.frame()
 
-saveRDS(population_byage, "inst/extdata/population_byage.rds")
+saveRDS(
+  population_byage,
+  file.path("inst", "extdata", "population_byage.rds")
+)
