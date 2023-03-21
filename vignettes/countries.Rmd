@@ -39,8 +39,8 @@ and as indicated by the titles, not all regions were included.
 The full list is available with the `list_countries()` function:
 
 ```{r}
-(all_countries_2017 <- list_countries(data_source = 2017))
-(all_countries_2020 <- list_countries(data_source = 2020))
+(all_regions_2017 <- list_countries(data_source = 2017))
+(all_regions_2020 <- list_countries(data_source = 2020))
 ```
 
 Below is a map that may help you find out which countries are absent from the
@@ -53,8 +53,8 @@ wrld <- map_data("world")
 wrld$region <- countrycode::countryname(wrld$region)
 
 wrld$included <- "Not included"
-wrld$included[wrld$region %in% all_countries_2020] <- "2020" 
-wrld$included[wrld$region %in% all_countries_2017] <- "2017 & 2020"
+wrld$included[wrld$region %in% all_regions_2020] <- "2020" 
+wrld$included[wrld$region %in% all_regions_2017] <- "2017 & 2020"
 
 
 ggplot(wrld, aes(long, lat, group = group, fill = included)) +

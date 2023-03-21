@@ -52,9 +52,9 @@ contact_matrix <- function(
     )
   )
 
-  matrix_country <- all[[country]]
+  matrix_region <- all[[country]]
 
-  if (is.null(matrix_country)) {
+  if (is.null(matrix_region)) {
     stop(
       "The geographical region", country, " is not included in the dataset.\n",
       "Use the list_countries() function to get a list of all regions in",
@@ -63,5 +63,5 @@ contact_matrix <- function(
     )
   }
 
-  return(matrix_country)
+  return(matrix_region)
 }

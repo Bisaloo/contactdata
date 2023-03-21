@@ -38,10 +38,10 @@ for (l in locations) {
   file1 <- paste0("MUestimates_", l, "_1.xlsx")
   file2 <- paste0("MUestimates_", l, "_2.xlsx")
 
-  countries1 <- excel_sheets(file1)
-  countries2 <- excel_sheets(file2)
+  regions1 <- excel_sheets(file1)
+  regions2 <- excel_sheets(file2)
 
-  for (c in countries1) {
+  for (c in regions1) {
     df <- as.matrix(read_xlsx(
       file1,
       col_names = FALSE,
@@ -53,7 +53,7 @@ for (l in locations) {
     c <- fix_names(c)
     res[[c]] <- df
   }
-  for (c in countries2) {
+  for (c in regions2) {
     df <- as.matrix(read_xlsx(
       file2,
       col_names = FALSE,
