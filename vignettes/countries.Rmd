@@ -20,6 +20,9 @@ knitr::opts_chunk$set(
 library(contactdata)
 ```
 
+**Note that this package does not make any geopolitical statement and only 
+provides the data as it has been published.**
+
 The data included in this package comes from two articles
 
 > Kiesha Prem, Alex R. Cook, Mark Jit, *Projecting social contact matrices in 
@@ -62,6 +65,3 @@ ggplot(wrld, aes(long, lat, group = group, fill = included)) +
   coord_equal() +
   theme_bw()
 ```
-
-**Note that this package does not make any geopolitical statement and only 
-provides the data as it has been published.**

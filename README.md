@@ -32,6 +32,9 @@ and
 
 (please cite them in your publications, alongside this package).
 
+**Note that this package does not make any geopolitical statement and
+only provides the data as it has been published.**
+
 contactdata offers an easier access to this data, makes it readily
 compatible with [tidyverse](https://www.tidyverse.org/) packages, such
 as [ggplot2](https://ggplot2.tidyverse.org/), via the
