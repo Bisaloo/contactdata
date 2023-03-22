@@ -1,5 +1,5 @@
 Package: contactdata
-Title: Social Contact Matrices for 177 Geographical Regions
+Title: Social Contact Matrices for 152 Countries
 Version: 1.0.0
 Authors@R: 
     c(person(given = "Hugo",
@@ -20,10 +20,9 @@ Authors@R:
              role = "dtc",
              comment = c(ORCID = "0000-0001-6658-8255")))
 Description: Data package for the supplementary data in Prem et al. (2017)
-    <doi:10.1371/journal.pcbi.1005697> and Prem et al. (2021) 
-    <doi:10.1371/journal.pcbi.1009098>.
-    Provides easy access to contact data for 177 geographical regions, for use 
-    in epidemiological, demographic or social sciences research.
+    <doi:10.1371/journal.pcbi.1005697>.
+    Provides easy access to contact data for 152 countries, for use in
+    epidemiological, demographic or social sciences research.
 License: MIT + file LICENSE
 Depends: 
     R (>= 3.5.0)

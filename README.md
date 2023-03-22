@@ -15,7 +15,7 @@ coverage](https://codecov.io/gh/Bisaloo/contactdata/branch/main/graph/badge.svg)
 <!-- badges: end -->
 
 The goal of contactdata is to provide access to social contact data for
-177 geographical regions. This data comes from
+152 countries. This data comes from
 
 > Kiesha Prem, Alex R. Cook, Mark Jit, *Projecting social contact
 > matrices in 152 countries using contact surveys and demographic data*,
@@ -58,7 +58,7 @@ install.packages("contactdata", repos = "https://bisaloo.r-universe.dev")
 ## Example
 
 The most basic function allows you to get matrix data for a specific
-region:
+country:
 
 ``` r
 library(contactdata)

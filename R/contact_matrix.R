@@ -1,14 +1,14 @@
-#' Get contact data matrix for a specific geographical region
+#' Get contact data matrix for a specific country
 #'
-#' @param country Character. The name of the geographical region for which you
-#'   want contact data.
+#' @param country Character. The name of the country for which you want contact
+#'    data.
 #' @param location Character. One of "all" (default), "home", "school", "work"
 #'   or "other".
 #' @param geographic_setting Character. One of "all" (default), "rural", "urban"
 #' @param data_source Character. Either "202O" (default) or "2017"
 #'
 #' @return A square (16 by 16) matrix containing the contact data between
-#'    the different age classes for a given geographical region.
+#'    the different age classes for a given country.
 #'
 #' @examples
 #' contact_matrix("France", location = "all")
@@ -56,8 +56,8 @@ contact_matrix <- function(
 
   if (is.null(matrix_country)) {
     stop(
-      "The geographical region", country, " is not included in the dataset.\n",
-      "Use the list_countries() function to get a list of all regions in",
+      "The country ", country, " is not included in the dataset.\n",
+      "Use the list_countries() function to get a list of all countries in",
       " the dataset.",
       call. = FALSE
     )

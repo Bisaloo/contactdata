@@ -1,12 +1,11 @@
-#' Get a data.frame (in long format) of contact data for multiple geographical
-#' regions
+#' Get a data.frame (in long format) of contact data for multiple countries
 #'
 #' @param countries A character string or a vector of character containing the
-#'   names of the geographical region for which to return contact data
+#'    names of the countries for which to return contact data
 #' @param ... Arguments passed to [contact_matrix()]
 #'
 #' @return A data.frame (in long format) with 4 columns:
-#'   * `country`: the geographical region name
+#'   * `country`: the country name
 #'   * `age_from`: the age group of individual
 #'   * `age_to`: the age group of contact
 #'   * `contact`: the intensity of contact
