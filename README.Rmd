@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 [![cran version](https://www.r-pkg.org/badges/version-ago/contactdata)](https://cran.r-project.org/package=contactdata/)
 [![R-CMD-check](https://github.com/Bisaloo/contactdata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Bisaloo/contactdata/actions/workflows/R-CMD-check.yaml)
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
-[![Codecov test coverage](https://codecov.io/gh/Bisaloo/contactdata/branch/main/graph/badge.svg)](https://codecov.io/gh/Bisaloo/contactdata?branch=main)
+[![Codecov test coverage](https://codecov.io/gh/Bisaloo/contactdata/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Bisaloo/contactdata?branch=main)
 <!-- badges: end -->
 
 The goal of contactdata is to provide access to social contact data for 177
@@ -75,7 +75,7 @@ contact_matrix("France")
 
 You can also get several countries at once with the `contact_df_countries()`
 function, as detailed in the 
-[vignette](https://bisaloo.github.io/contactdata/articles/visualise.html).
+[vignette](https://hugogruson.fr/contactdata/articles/visualise_contact.html).
 
 Because it is very likely that users of this package will also need data about
 the population in each age group, it is also bundled in this package for

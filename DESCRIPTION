@@ -35,7 +35,7 @@ Suggests:
     spelling,
     testthat(>= 3.0.0),
     covr
-URL: https://bisaloo.github.io/contactdata/, https://github.com/bisaloo/contactdata
+URL: https://hugogruson.fr/contactdata/, https://github.com/bisaloo/contactdata
 BugReports: https://github.com/bisaloo/contactdata/issues
 Encoding: UTF-8
 Language: en-GB

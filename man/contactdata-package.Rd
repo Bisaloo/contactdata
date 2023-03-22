@@ -4,16 +4,16 @@
 \name{contactdata-package}
 \alias{contactdata}
 \alias{contactdata-package}
-\title{contactdata: Social Contact Matrices for 152 Countries}
+\title{contactdata: Social Contact Matrices for 177 Countries}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Data package for the supplementary data in Prem et al. (2017) \doi{10.1371/journal.pcbi.1005697}. Provides easy access to contact data for 152 countries, for use in epidemiological, demographic or social sciences research.
+Data package for the supplementary data in Prem et al. (2017) \doi{10.1371/journal.pcbi.1005697} and Prem et al. \doi{10.1371/journal.pcbi.1009098}. Provides easy access to contact data for 177 countries, for use in epidemiological, demographic or social sciences research.
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://bisaloo.github.io/contactdata/}
+  \item \url{https://hugogruson.fr/contactdata/}
   \item \url{https://github.com/bisaloo/contactdata}
   \item Report bugs at \url{https://github.com/bisaloo/contactdata/issues}
 }
