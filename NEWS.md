@@ -1,5 +1,55 @@
 # contactdata (development version)
 
+## Bug fix
+
+* `age_df_countries()` now pads single-digit ages with a leading 0 to ensure 
+correct ordering. The new behaviour also produces age bin labels that are 
+consistent with the labels for the contact matrices 
+
+  Before:
+  
+  ```
+      country   age population
+  945  France 70_74    3611581
+  946  France 65_69    3915473
+  947  France 60_64    4123982
+  948  France   5_9    4179215
+  949  France 55_59    4344144
+  950  France 50_54    4445007
+  951  France 45_49    4490632
+  952  France 40_44    3991502
+  953  France 35_39    4097635
+  954  France 30_34    4036630
+  955  France 25_29    3920126
+  956  France 20_24    3959154
+  957  France 15_19    4100855
+  958  France 10_14    4201067
+  959  France   0_4    4070454
+  960  France   75+    6352464
+  ```
+
+  After:
+  
+  ```
+      country   age population
+  945  France 00_04    4070454
+  946  France 05_09    4179215
+  947  France 10_14    4201067
+  948  France 15_19    4100855
+  949  France 20_24    3959154
+  950  France 25_29    3920126
+  951  France 30_34    4036630
+  952  France 35_39    4097635
+  953  France 40_44    3991502
+  954  France 45_49    4490632
+  955  France 50_54    4445007
+  956  France 55_59    4344144
+  957  France 60_64    4123982
+  958  France 65_69    3915473
+  959  France 70_74    3611581
+  960  France   75+    6352464
+  ```
+
 # contactdata 1.0.0
 
 ## New features

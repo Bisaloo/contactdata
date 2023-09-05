@@ -10,8 +10,8 @@ fix_names <- function(name) {
 }
 
 all_countries <- unique(c(
-  contactdata::list_countries(2017),
-  contactdata::list_countries(2020)
+  contactdata::list_countries(data_source = 2017),
+  contactdata::list_countries(data_source = 2020)
 ))
 
 # From https://www2.census.gov/programs-surveys/international-programs/about/idb/idbzip.zip
@@ -29,7 +29,11 @@ population_byage <- vroom::vroom(file.path("data-raw", "idb5yr.all")) %>%
   rowwise() %>%
   mutate("75+" = sum(`75_79`, `80_84`, `85_89`, `90_94`, `95_99`), .keep = "unused") %>%
   tidyr::pivot_longer(-country, names_to = "age", values_to = "population") %>%
+  mutate(age = gsub("^(\\d)_(\\d)$", "0\\1_0\\2", age)) %>%
+  arrange(country, age) %>%
   as.data.frame()
+
+rownames(population_byage) <- NULL
 
 saveRDS(
   population_byage,
