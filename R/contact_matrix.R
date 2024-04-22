@@ -63,12 +63,8 @@ contact_matrix <- function(
     )
   }
 
-  res <- contactmatrix::new_contactmatrix(
-    from      = rep(rownames(matrix_country),
-                    each = length(colnames(matrix_country))),
-    to        = rep(colnames(matrix_country),
-                    length(rownames(matrix_country))),
-    value     = c(t(matrix_country)),
+  res <- contactmatrix::as_contactmatrix(
+    matrix_country,
     symmetric = FALSE
   )
 
