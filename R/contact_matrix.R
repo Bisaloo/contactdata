@@ -63,5 +63,10 @@ contact_matrix <- function(
     )
   }
 
-  return(matrix_country)
+  res <- contactmatrix::as_contactmatrix(
+    matrix_country,
+    symmetric = FALSE
+  )
+
+  return(res)
 }
