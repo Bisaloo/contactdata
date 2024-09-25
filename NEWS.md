@@ -1,4 +1,4 @@
-# contactdata (development version)
+# contactdata 1.1.0
 
 ## Bug fix
 
