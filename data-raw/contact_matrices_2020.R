@@ -1,6 +1,5 @@
-owd <- setwd(tempdir())
-
-system("svn export https://github.com/kieshaprem/synthetic-contact-matrices/trunk/output/syntheticmatrices")
+# Download https://github.com/kieshaprem/synthetic-contact-matrices/tree/master/output/syntheticmatrices
+files <- unzip("syntheticmatrices.zip", exdir = "syntheticmatrices", unzip = "internal")
 
 library(fs)
 
@@ -28,13 +27,13 @@ for (i in seq_along(fichiers)) {
 
   res <- lapply(eval(parse(text = dataset)), function(df) {
 
-    rownames(df) <- colnames(df) <- sprintf("%02i_%02i", seq(0, 75, 5), seq(5, 80, 5))
+    rownames(df) <- colnames(df) <- sprintf("[%02i,%02i)", seq(0, 75, 5), seq(5, 80, 5))
     return(df)
 
   })
 
-  names(res) <- countrycode::countrycode(names(res), origin = "iso3c", destination = "cldr.short.en")
+  names(res) <- countrycode::countrycode(names(res), origin = "iso3c", destination = "country.name.en")
 
-  saveRDS(res, paste0(owd, "/inst/extdata/", new_names_all[[i]]))
+  saveRDS(res, paste0("inst/extdata/", new_names_all[[i]]))
 
 }
