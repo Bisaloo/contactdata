@@ -1,4 +1,6 @@
-owd <- setwd(tempdir())
+owd <- getwd()
+
+setwd(tempdir())
 
 fix_names <- function(name) {
 
@@ -49,7 +51,7 @@ for (l in locations) {
       skip = 1,
       .name_repair = "minimal"
     ))
-    rownames(df) <- colnames(df) <- sprintf("%02i_%02i", seq(0, 75, 5), seq(5, 80, 5))
+    rownames(df) <- colnames(df) <- sprintf("[%02i,%02i)", seq(0, 75, 5), seq(5, 80, 5))
     c <- fix_names(c)
     res[[c]] <- df
   }
@@ -60,7 +62,7 @@ for (l in locations) {
       sheet = c,
       .name_repair = "minimal"
     ))
-    rownames(df) <- colnames(df) <- sprintf("%02i_%02i", seq(0, 75, 5), seq(5, 80, 5))
+    rownames(df) <- colnames(df) <- sprintf("[%02i,%02i)", seq(0, 75, 5), seq(5, 80, 5))
     c <- fix_names(c)
     res[[c]] <- df
   }

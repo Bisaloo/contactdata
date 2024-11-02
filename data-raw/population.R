@@ -26,10 +26,13 @@ population_byage <- vroom::vroom(file.path("data-raw", "idb5yr.all")) %>%
   # we need to sum
   group_by(country) %>%
   summarise(across(everything(), sum)) %>%
-  rowwise() %>%
-  mutate("75+" = sum(`75_79`, `80_84`, `85_89`, `90_94`, `95_99`), .keep = "unused") %>%
   tidyr::pivot_longer(-country, names_to = "age", values_to = "population") %>%
-  mutate(age = gsub("^(\\d)_(\\d)$", "0\\1_0\\2", age)) %>%
+  tidyr::separate(age, into = c("age_start", "age_end"), sep = "_") %>%
+  dplyr::mutate(across(c(age_start, age_end), as.integer)) %>%
+  mutate(
+    age = sprintf("[%02i,%02i)", age_start, age_end+1),
+    .keep = "unused"
+  ) %>%
   arrange(country, age) %>%
   as.data.frame()
 
