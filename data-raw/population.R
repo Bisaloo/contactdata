@@ -31,6 +31,7 @@ population_byage <- vroom::vroom(file.path("data-raw", "idb5yr.all")) %>%
   dplyr::mutate(across(c(age_start, age_end), as.integer)) %>%
   mutate(
     age = sprintf("[%02i,%02i)", age_start, age_end+1),
+    .before = "population",
     .keep = "unused"
   ) %>%
   arrange(country, age) %>%
