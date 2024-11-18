@@ -14,11 +14,11 @@ test_that("contact_df_countries()", {
 
   expect_setequal(
     res$age_from,
-    sprintf("%02i_%02i", seq(0, 75, 5), seq(5, 80, 5))
+    sprintf("[%02i,%02i)", seq(0, 75, 5), seq(5, 80, 5))
   )
   expect_setequal(
     res$age_to,
-    sprintf("%02i_%02i", seq(0, 75, 5), seq(5, 80, 5))
+    sprintf("[%02i,%02i)", seq(0, 75, 5), seq(5, 80, 5))
   )
 
   expect_setequal(
