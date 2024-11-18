@@ -1,5 +1,20 @@
 # contactdata (development version)
 
+## Breaking changes
+
+* The `contact_matrix()` function now formats age groups as `[low,high)`, 
+  when they previously were formatted as `low_high` (#20).
+
+* The age dataset in `age_df_countries()` no longer regroup the `[75,80)`,
+  `[80,85)`, `[85,90)`, `[90,95)` and `[95,100)` age groups into a single `75+`
+  age group (#20).
+  
+* Some country names have been aligned with the authoritative upstream source we
+  are using (the countrycode R package). This might result in some changes in a
+  handful of situations (see #20 for the list of affected countries). 
+  You can sill rely on the `list_countries()` function for a comprehensive
+  up-to-date list of covered countries.
+
 # contactdata 1.1.0
 
 ## Bug fix
