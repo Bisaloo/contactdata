@@ -26,7 +26,7 @@ test_that("age_df_countries() and contact_df_countries() provide data for all li
       age_df_countries(list_countries(data_source = s))
     )
 
-    expect_identical(nrow(contacts), nrow(popsizes) * 16L)
+    expect_identical(nrow(contacts), nrow(popsizes) * 20L)
 
   }
 
