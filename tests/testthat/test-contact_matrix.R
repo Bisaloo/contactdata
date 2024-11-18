@@ -6,11 +6,11 @@ test_that("contact_matrix()", {
   expect_identical(dim(res), c(16L, 16L))
   expect_identical(
     rownames(res),
-    sprintf("%02i_%02i", seq(0, 75, 5), seq(5, 80, 5))
+    sprintf("[%02i,%02i)", seq(0, 75, 5), seq(5, 80, 5))
   )
   expect_identical(
     colnames(res),
-    sprintf("%02i_%02i", seq(0, 75, 5), seq(5, 80, 5))
+    sprintf("[%02i,%02i)", seq(0, 75, 5), seq(5, 80, 5))
   )
 
   expect_error(
