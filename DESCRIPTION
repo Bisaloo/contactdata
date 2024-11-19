@@ -38,7 +38,7 @@ Suggests:
     testthat(>= 3.0.0),
     covr
 Remotes:
-    socialcontactdata/contactmatrix
+    socialcontactdata/contactmatrix@as_contactmatrix.matrix
 URL: https://hugogruson.fr/contactdata/, https://github.com/bisaloo/contactdata
 BugReports: https://github.com/bisaloo/contactdata/issues
 Encoding: UTF-8
