@@ -83,8 +83,7 @@ contact_matrix <- function(
   colnames(new_matrix) <-  c(sprintf("[%s,%s)", age_limits[-length(age_limits)], age_limits[-1]), paste(toString(age_limits[length(age_limits)]),"+", sep = ""))
   
   return(new_matrix)
-  } else 
-  {
+  } else {
     old_limits <- unname(sapply(groups_name, function(x) as.integer(strsplit(x, split = "_")[[1]][1])))
 
   colnames(matrix_country) <- as.character(reduce_agegroups(old_limits, age_limits))
