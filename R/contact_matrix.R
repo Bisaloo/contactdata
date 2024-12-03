@@ -64,18 +64,18 @@ contact_matrix <- function(
       call. = FALSE
     )
   }
-  if (age_limits != NULL) {
+  if (exists("age_limits") && !is.null(age_limits)) {
     groups_name <- colnames(matrix_country)
     old_limits <- unname(sapply(groups_name, function(x) {
       as.integer(strsplit(x,
-                   split = "_"
-                 )[[1]][1])
+        split = "_"
+      )[[1]][1])
     }))
-    colnames(matrix_country) <- as.character(reduce_agegroups(
+    colnames(matrix_country) <- as.character(socialmixr::reduce_agegroups(
       old_limits,
       age_limits
     ))
-    rownames(matrix_country) <- as.character(reduce_agegroups(
+    rownames(matrix_country) <- as.character(socialmixr::reduce_agegroups(
       old_limits,
       age_limits
     ))
@@ -84,9 +84,9 @@ contact_matrix <- function(
 
     row_sums <- sapply(unique_names, function(x) {
       rowSums(matrix_country[,
-                which(colnames(matrix_country) == x),
-                drop = FALSE
-              ])
+        which(colnames(matrix_country) == x),
+        drop = FALSE
+      ])
     })
 
     new_matrix <- sapply(unique_names, function(x) {
@@ -107,15 +107,25 @@ contact_matrix <- function(
 
     return(new_matrix)
   } else {
+    groups_name <- colnames(matrix_country)
     old_limits <- unname(sapply(groups_name, function(x) {
       as.integer(strsplit(x, split = "_")[[1]][1])
     }))
-
-    colnames(matrix_country) <- as.character(
-      reduce_agegroups(old_limits, age_limits)
+    rownames(matrix_country) <- c(
+      sprintf(
+        "[%s,%s)",
+        old_limits[-length(old_limits)], old_limits[-1]
+      ),
+      paste(toString(old_limits[length(old_limits)]), "+"
+      )
     )
-    rownames(matrix_country) <- as.character(
-      reduce_agegroups(old_limits, age_limits)
+    colnames(matrix_country) <- c(
+      sprintf(
+        "[%s,%s)",
+        old_limits[-length(old_limits)], old_limits[-1]
+      ),
+      paste0(toString(old_limits[length(old_limits)]), "+"
+      )
     )
     return(matrix_country)
   }
