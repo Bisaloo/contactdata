@@ -68,8 +68,8 @@ contact_matrix <- function(
     groups_name <- colnames(matrix_country)
     old_limits <- unname(sapply(groups_name, function(x) {
       as.integer(strsplit(x,
-        split = "_"
-      )[[1]][1])
+                   split = "_"
+                 )[[1]][1])
     }))
     colnames(matrix_country) <- as.character(socialmixr::reduce_agegroups(
       old_limits,
@@ -84,9 +84,9 @@ contact_matrix <- function(
 
     row_sums <- sapply(unique_names, function(x) {
       rowSums(matrix_country[,
-        which(colnames(matrix_country) == x),
-        drop = FALSE
-      ])
+                which(colnames(matrix_country) == x),
+                drop = FALSE
+              ])
     })
 
     new_matrix <- sapply(unique_names, function(x) {
