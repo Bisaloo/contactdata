@@ -66,6 +66,23 @@ contact_matrix <- function(
       call. = FALSE
     )
   }
+  if (age_limits != NULL)
+  {
+    groups_name <- colnames(matrix_country)
+  old_limits <- unname(sapply(groups_name, function(x) as.integer(strsplit(x, split = "_")[[1]][1])))
+
+  colnames(matrix_country) <- as.character(reduce_agegroups(old_limits, age_limits))
+  rownames(matrix_country) <- as.character(reduce_agegroups(old_limits, age_limits))
   
-  return(matrix_country)
+  unique_names <-  unique(colnames(matrix_country))
+  
+  row_sums <- sapply(unique_names, function(x) rowSums(matrix_country[, which(colnames(matrix_country)==x), drop = FALSE]))
+  
+  new_matrix <- sapply(unique_names, function(x) colSums(row_sums[which(rownames(matrix_country)==x), , drop = FALSE]))
+  rownames(new_matrix) <- c(sprintf("[%s,%s)", age_limits[-length(age_limits)], age_limits[-1]), paste(toString(age_limits[length(age_limits)]),"+", sep = ""))
+  colnames(new_matrix) <-  c(sprintf("[%s,%s)", age_limits[-length(age_limits)], age_limits[-1]), paste(toString(age_limits[length(age_limits)]),"+", sep = ""))
+  
+  return(new_matrix)
+  } else 
+  {return(matrix_country)}
 }
