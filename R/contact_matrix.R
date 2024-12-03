@@ -6,6 +6,9 @@
 #'   or "other".
 #' @param geographic_setting Character. One of "all" (default), "rural", "urban"
 #' @param data_source Character. Either "202O" (default) or "2017"
+#' @param age_limits A numeric vector specifying the targeted age limits. 
+#' If set to `NULL` (default), the function assumes 16 predefined age groups: 
+#' 0-4, 5-9, ..., 75-79, and 80+.
 #'
 #' @return A square (16 by 16) matrix containing the contact data between
 #'    the different age classes for a given country.
@@ -23,7 +26,8 @@ contact_matrix <- function(
   country,
   location = c("all", "home", "school", "work", "other"),
   geographic_setting = c("all", "rural", "urban"),
-  data_source = c("2020", "2017")
+  data_source = c("2020", "2017"),
+  age_limits = NULL
 ) {
 
   if (length(country) != 1) {
@@ -62,6 +66,6 @@ contact_matrix <- function(
       call. = FALSE
     )
   }
-
+  
   return(matrix_country)
 }
