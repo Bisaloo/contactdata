@@ -84,5 +84,11 @@ contact_matrix <- function(
   
   return(new_matrix)
   } else 
-  {return(matrix_country)}
+  {
+    old_limits <- unname(sapply(groups_name, function(x) as.integer(strsplit(x, split = "_")[[1]][1])))
+
+  colnames(matrix_country) <- as.character(reduce_agegroups(old_limits, age_limits))
+  rownames(matrix_country) <- as.character(reduce_agegroups(old_limits, age_limits))
+    return(matrix_country)
+    }
 }
