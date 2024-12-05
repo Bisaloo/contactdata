@@ -65,6 +65,11 @@ contact_matrix <- function(
     )
   }
   if (exists("age_limits") && !is.null(age_limits)) {
+    if (!(0 %in% age_limits))
+    {
+      age_limits <- append(age_limits, 0)
+    }
+    age_limits <- sort(age_limits)
     groups_name <- colnames(matrix_country)
     old_limits <- unname(sapply(groups_name, function(x) {
       as.integer(strsplit(x,
