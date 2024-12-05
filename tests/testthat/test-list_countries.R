@@ -18,12 +18,12 @@ test_that("age_df_countries() and contact_df_countries() provide data for all li
 
   for (s in c(2017, 2020)) {
 
-    expect_no_condition(
-      contacts <- contact_df_countries(list_countries(data_source = s), data_source = s)
+    contacts <- expect_no_condition(
+      contact_df_countries(list_countries(data_source = s), data_source = s)
     )
 
-    expect_no_condition(
-      popsizes <- age_df_countries(list_countries(data_source = s))
+    popsizes <- expect_no_condition(
+      age_df_countries(list_countries(data_source = s))
     )
 
     expect_identical(nrow(contacts), nrow(popsizes) * 16L)
