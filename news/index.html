@@ -65,6 +65,12 @@
 
     <div class="section level2">
 <h2 class="page-header" data-toc-text="development version" id="contactdata-development-version">contactdata (development version)<a class="anchor" aria-label="anchor" href="#contactdata-development-version"></a></h2>
+<div class="section level3">
+<h3 id="breaking-changes-development-version">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-development-version"></a></h3>
+<ul><li><p>The <code><a href="../reference/contact_matrix.html">contact_matrix()</a></code> function now formats age groups as <code>[low,high)</code>, when they previously were formatted as <code>low_high</code> (<a href="https://github.com/bisaloo/contactdata/issues/20" class="external-link">#20</a>).</p></li>
+<li><p>The age dataset in <code><a href="../reference/age_df_countries.html">age_df_countries()</a></code> no longer regroup the <code>[75,80)</code>, <code>[80,85)</code>, <code>[85,90)</code>, <code>[90,95)</code> and <code>[95,100)</code> age groups into a single <code>75+</code> age group (<a href="https://github.com/bisaloo/contactdata/issues/20" class="external-link">#20</a>).</p></li>
+<li><p>Some country names have been aligned with the authoritative upstream source we are using (the countrycode R package). This might result in some changes in a handful of situations (see <a href="https://github.com/bisaloo/contactdata/issues/20" class="external-link">#20</a> for the list of affected countries). You can sill rely on the <code><a href="../reference/list_countries.html">list_countries()</a></code> function for a comprehensive up-to-date list of covered countries.</p></li>
+</ul></div>
 </div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.1.0" id="contactdata-110">contactdata 1.1.0<small>2024-09-25</small><a class="anchor" aria-label="anchor" href="#contactdata-110"></a></h2>

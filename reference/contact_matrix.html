@@ -120,76 +120,76 @@ comparison with empirical data for the COVID-19 era</em>, PLoS Comp. Biol.
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">contact_matrix</span><span class="op">(</span><span class="st">"France"</span>, location <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         00_05   05_10   10_15   15_20   20_25   25_30   30_35   35_40   40_45</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 00_05 2.78349 1.09714 0.59766 0.42514 0.54475 0.83666 1.12491 1.01569 0.63464</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 05_10 1.33122 6.29510 1.27272 0.46477 0.35261 0.68506 1.02618 1.13031 0.99165</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10_15 0.39897 2.22464 9.84713 1.05305 0.45699 0.50444 0.66377 1.01329 1.16385</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15_20 0.30098 0.51971 3.20301 9.61013 1.15339 0.63465 0.54228 0.81646 0.95410</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20_25 0.37971 0.37347 0.44479 2.04600 3.20611 1.27444 0.82373 0.68958 0.68682</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25_30 0.72782 0.46144 0.35097 0.79856 1.67674 2.60892 1.49240 1.13783 0.96147</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30_35 0.79200 0.88463 0.67619 0.47619 0.92299 1.40768 2.20929 1.48891 1.13288</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35_40 0.74890 1.07171 0.88910 0.75047 0.72376 1.16507 1.45639 2.36740 1.65545</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40_45 0.51058 0.76735 1.06267 0.90561 0.87963 1.04440 1.34928 1.54511 2.22415</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45_50 0.33981 0.42638 0.67853 1.08318 0.90254 0.92989 1.09819 1.26458 1.37553</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50_55 0.31072 0.36274 0.59937 0.83731 1.00352 1.19355 1.06834 1.05459 1.36231</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55_60 0.39864 0.42351 0.50890 0.54609 0.71051 1.02643 1.13779 0.92754 1.01287</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60_65 0.38587 0.36993 0.34816 0.37182 0.48445 0.66960 0.78982 0.84058 0.74527</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65_70 0.29379 0.37405 0.33048 0.29065 0.37366 0.48083 0.65580 0.67714 0.68240</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70_75 0.20554 0.34026 0.38589 0.45420 0.31254 0.41868 0.44131 0.65480 0.77630</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75_80 0.26897 0.27668 0.35823 0.32506 0.26700 0.28903 0.42676 0.45384 0.51002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         45_50   50_55   55_60   60_65   65_70   70_75   75_80</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 00_05 0.50544 0.52665 0.49783 0.39153 0.33717 0.26006 0.17979</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 05_10 0.60923 0.49424 0.44941 0.41570 0.33297 0.24289 0.17912</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10_15 0.83145 0.55457 0.38642 0.30138 0.29915 0.26661 0.19652</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15_20 1.05109 0.63727 0.39461 0.28397 0.24315 0.19886 0.15800</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20_25 0.97167 0.70034 0.48631 0.29828 0.22838 0.24443 0.18815</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25_30 0.91936 0.95941 0.62849 0.43022 0.29327 0.22153 0.16448</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30_35 0.95357 0.83514 0.72204 0.51731 0.34141 0.23656 0.19808</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35_40 1.17352 0.91423 0.64593 0.56372 0.43426 0.33740 0.20415</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40_45 1.46235 1.06357 0.54927 0.52157 0.41118 0.33389 0.24101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45_50 1.93332 1.16615 0.68328 0.45318 0.34997 0.32903 0.25424</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50_55 1.58509 1.70873 1.04120 0.59368 0.35534 0.33119 0.26512</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55_60 0.93730 1.19991 1.48381 0.82802 0.48857 0.32124 0.23713</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60_65 0.67297 0.67140 0.88300 1.21412 0.69313 0.50550 0.25726</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65_70 0.52748 0.55506 0.65119 0.74149 1.13052 0.52794 0.27354</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70_75 0.69078 0.54272 0.51067 0.89222 0.93588 1.25788 0.39716</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75_80 0.66095 0.66008 0.47413 0.41622 0.59534 0.62970 0.44627</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         [00,05) [05,10) [10,15) [15,20) [20,25) [25,30) [30,35) [35,40) [40,45)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [00,05) 2.78349 1.09714 0.59766 0.42514 0.54475 0.83666 1.12491 1.01569 0.63464</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [05,10) 1.33122 6.29510 1.27272 0.46477 0.35261 0.68506 1.02618 1.13031 0.99165</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10,15) 0.39897 2.22464 9.84713 1.05305 0.45699 0.50444 0.66377 1.01329 1.16385</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [15,20) 0.30098 0.51971 3.20301 9.61013 1.15339 0.63465 0.54228 0.81646 0.95410</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [20,25) 0.37971 0.37347 0.44479 2.04600 3.20611 1.27444 0.82373 0.68958 0.68682</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [25,30) 0.72782 0.46144 0.35097 0.79856 1.67674 2.60892 1.49240 1.13783 0.96147</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [30,35) 0.79200 0.88463 0.67619 0.47619 0.92299 1.40768 2.20929 1.48891 1.13288</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [35,40) 0.74890 1.07171 0.88910 0.75047 0.72376 1.16507 1.45639 2.36740 1.65545</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [40,45) 0.51058 0.76735 1.06267 0.90561 0.87963 1.04440 1.34928 1.54511 2.22415</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [45,50) 0.33981 0.42638 0.67853 1.08318 0.90254 0.92989 1.09819 1.26458 1.37553</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [50,55) 0.31072 0.36274 0.59937 0.83731 1.00352 1.19355 1.06834 1.05459 1.36231</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [55,60) 0.39864 0.42351 0.50890 0.54609 0.71051 1.02643 1.13779 0.92754 1.01287</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [60,65) 0.38587 0.36993 0.34816 0.37182 0.48445 0.66960 0.78982 0.84058 0.74527</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [65,70) 0.29379 0.37405 0.33048 0.29065 0.37366 0.48083 0.65580 0.67714 0.68240</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [70,75) 0.20554 0.34026 0.38589 0.45420 0.31254 0.41868 0.44131 0.65480 0.77630</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [75,80) 0.26897 0.27668 0.35823 0.32506 0.26700 0.28903 0.42676 0.45384 0.51002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         [45,50) [50,55) [55,60) [60,65) [65,70) [70,75) [75,80)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [00,05) 0.50544 0.52665 0.49783 0.39153 0.33717 0.26006 0.17979</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [05,10) 0.60923 0.49424 0.44941 0.41570 0.33297 0.24289 0.17912</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10,15) 0.83145 0.55457 0.38642 0.30138 0.29915 0.26661 0.19652</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [15,20) 1.05109 0.63727 0.39461 0.28397 0.24315 0.19886 0.15800</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [20,25) 0.97167 0.70034 0.48631 0.29828 0.22838 0.24443 0.18815</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [25,30) 0.91936 0.95941 0.62849 0.43022 0.29327 0.22153 0.16448</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [30,35) 0.95357 0.83514 0.72204 0.51731 0.34141 0.23656 0.19808</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [35,40) 1.17352 0.91423 0.64593 0.56372 0.43426 0.33740 0.20415</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [40,45) 1.46235 1.06357 0.54927 0.52157 0.41118 0.33389 0.24101</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [45,50) 1.93332 1.16615 0.68328 0.45318 0.34997 0.32903 0.25424</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [50,55) 1.58509 1.70873 1.04120 0.59368 0.35534 0.33119 0.26512</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [55,60) 0.93730 1.19991 1.48381 0.82802 0.48857 0.32124 0.23713</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [60,65) 0.67297 0.67140 0.88300 1.21412 0.69313 0.50550 0.25726</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [65,70) 0.52748 0.55506 0.65119 0.74149 1.13052 0.52794 0.27354</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [70,75) 0.69078 0.54272 0.51067 0.89222 0.93588 1.25788 0.39716</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [75,80) 0.66095 0.66008 0.47413 0.41622 0.59534 0.62970 0.44627</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">contact_matrix</span><span class="op">(</span><span class="st">"Belgium"</span>, location <span class="op">=</span> <span class="st">"school"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         00_05   05_10   10_15   15_20   20_25   25_30   30_35   35_40   40_45</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 00_05 2.82093 0.92170 0.48046 0.02891 0.03428 0.42758 0.65892 0.14161 0.08598</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 05_10 0.17441 4.25239 0.32984 0.02286 0.00000 0.12828 0.16429 0.17113 0.28740</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10_15 0.10457 0.17891 7.33501 0.53665 0.22516 0.14806 0.02504 0.29424 0.14234</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15_20 0.35473 0.26124 0.32568 8.49234 0.65227 0.22267 0.00000 0.38819 0.20268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20_25 0.00000 0.00000 0.00000 0.32447 0.51299 0.06472 0.00000 0.00000 0.02545</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25_30 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.01296 0.00515 0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30_35 0.02412 0.03038 0.00000 0.00000 0.00335 0.00430 0.00418 0.01719 0.02419</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35_40 0.09168 0.00000 0.03160 0.00000 0.01454 0.07513 0.04337 0.02606 0.03884</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40_45 0.00000 0.00000 0.00000 0.05836 0.00000 0.00000 0.00000 0.00000 0.05427</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45_50 0.00000 0.00000 0.00000 0.01057 0.00000 0.00000 0.00000 0.02775 0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50_55 0.00000 0.00000 0.02082 0.00747 0.00000 0.00000 0.00000 0.00793 0.00778</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55_60 0.01693 0.01664 0.00000 0.00000 0.00000 0.00000 0.04766 0.01915 0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60_65 0.00000 0.00000 0.01085 0.00000 0.00000 0.00000 0.00000 0.05103 0.01057</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65_70 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00047 0.00046</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70_75 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75_80 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         45_50   50_55   55_60   60_65   65_70   70_75   75_80</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 00_05 0.00000 0.14394 0.00000 0.00000 0.00000 0.00000 0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 05_10 0.24403 0.12990 0.05876 0.00000 0.02149 0.02046 0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10_15 0.26037 0.10748 0.05924 0.02357 0.00000 0.00000 0.02104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15_20 0.42162 0.20215 0.10576 0.00000 0.00000 0.00000 0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20_25 0.00981 0.00000 0.00000 0.00000 0.00916 0.00000 0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25_30 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30_35 0.00380 0.01012 0.00000 0.00387 0.00000 0.00000 0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35_40 0.00901 0.00352 0.00894 0.00000 0.00000 0.00000 0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40_45 0.05050 0.05626 0.00000 0.00000 0.00000 0.00000 0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45_50 0.00000 0.00000 0.00000 0.01010 0.00000 0.00000 0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50_55 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55_60 0.01683 0.04592 0.00000 0.01731 0.00000 0.00000 0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60_65 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65_70 0.00217 0.00129 0.00133 0.00048 0.00047 0.00049 0.00132</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70_75 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75_80 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         [00,05) [05,10) [10,15) [15,20) [20,25) [25,30) [30,35) [35,40) [40,45)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [00,05) 2.82093 0.92170 0.48046 0.02891 0.03428 0.42758 0.65892 0.14161 0.08598</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [05,10) 0.17441 4.25239 0.32984 0.02286 0.00000 0.12828 0.16429 0.17113 0.28740</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10,15) 0.10457 0.17891 7.33501 0.53665 0.22516 0.14806 0.02504 0.29424 0.14234</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [15,20) 0.35473 0.26124 0.32568 8.49234 0.65227 0.22267 0.00000 0.38819 0.20268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [20,25) 0.00000 0.00000 0.00000 0.32447 0.51299 0.06472 0.00000 0.00000 0.02545</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [25,30) 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.01296 0.00515 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [30,35) 0.02412 0.03038 0.00000 0.00000 0.00335 0.00430 0.00418 0.01719 0.02419</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [35,40) 0.09168 0.00000 0.03160 0.00000 0.01454 0.07513 0.04337 0.02606 0.03884</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [40,45) 0.00000 0.00000 0.00000 0.05836 0.00000 0.00000 0.00000 0.00000 0.05427</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [45,50) 0.00000 0.00000 0.00000 0.01057 0.00000 0.00000 0.00000 0.02775 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [50,55) 0.00000 0.00000 0.02082 0.00747 0.00000 0.00000 0.00000 0.00793 0.00778</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [55,60) 0.01693 0.01664 0.00000 0.00000 0.00000 0.00000 0.04766 0.01915 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [60,65) 0.00000 0.00000 0.01085 0.00000 0.00000 0.00000 0.00000 0.05103 0.01057</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [65,70) 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00047 0.00046</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [70,75) 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [75,80) 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         [45,50) [50,55) [55,60) [60,65) [65,70) [70,75) [75,80)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [00,05) 0.00000 0.14394 0.00000 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [05,10) 0.24403 0.12990 0.05876 0.00000 0.02149 0.02046 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10,15) 0.26037 0.10748 0.05924 0.02357 0.00000 0.00000 0.02104</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [15,20) 0.42162 0.20215 0.10576 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [20,25) 0.00981 0.00000 0.00000 0.00000 0.00916 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [25,30) 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [30,35) 0.00380 0.01012 0.00000 0.00387 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [35,40) 0.00901 0.00352 0.00894 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [40,45) 0.05050 0.05626 0.00000 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [45,50) 0.00000 0.00000 0.00000 0.01010 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [50,55) 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [55,60) 0.01683 0.04592 0.00000 0.01731 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [60,65) 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [65,70) 0.00217 0.00129 0.00133 0.00048 0.00047 0.00049 0.00132</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [70,75) 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [75,80) 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
