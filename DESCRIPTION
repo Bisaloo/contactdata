@@ -27,6 +27,8 @@ Description: Data package for the supplementary data in Prem et al. (2017)
 License: MIT + file LICENSE
 Depends: 
     R (>= 3.5.0)
+Imports:
+    contactmatrix
 Suggests: 
     countrycode,
     ggplot2,
@@ -35,6 +37,8 @@ Suggests:
     spelling,
     testthat(>= 3.0.0),
     covr
+Remotes:
+    socialcontactdata/contactmatrix@as_contactmatrix.matrix
 URL: https://hugogruson.fr/contactdata/, https://github.com/bisaloo/contactdata
 BugReports: https://github.com/bisaloo/contactdata/issues
 Encoding: UTF-8
