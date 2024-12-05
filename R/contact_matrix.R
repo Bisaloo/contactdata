@@ -6,6 +6,9 @@
 #'   or "other".
 #' @param geographic_setting Character. One of "all" (default), "rural", "urban"
 #' @param data_source Character. Either "202O" (default) or "2017"
+#' @param age_limits A numeric vector specifying the targeted age limits.
+#' If set to `NULL` (default), the function assumes 16 predefined age groups:
+#' 0-4, 5-9, ..., 75-79, and 80+.
 #'
 #' @return A square (16 by 16) matrix containing the contact data between
 #'    the different age classes for a given country.
@@ -20,12 +23,11 @@
 #' @inherit list_countries references
 
 contact_matrix <- function(
-  country,
-  location = c("all", "home", "school", "work", "other"),
-  geographic_setting = c("all", "rural", "urban"),
-  data_source = c("2020", "2017")
-) {
-
+    country,
+    location = c("all", "home", "school", "work", "other"),
+    geographic_setting = c("all", "rural", "urban"),
+    data_source = c("2020", "2017"),
+    age_limits = NULL) {
   if (length(country) != 1) {
     stop("Please provide a single country", call. = FALSE)
   }
@@ -62,6 +64,74 @@ contact_matrix <- function(
       call. = FALSE
     )
   }
+  if (exists("age_limits") && !is.null(age_limits)) {
+    if (!(0 %in% age_limits))
+    {
+      age_limits <- append(age_limits, 0)
+    }
+    age_limits <- sort(age_limits)
+    groups_name <- colnames(matrix_country)
+    old_limits <- unname(sapply(groups_name, function(x) {
+      as.integer(strsplit(x,
+                   split = "_"
+                 )[[1]][1])
+    }))
+    colnames(matrix_country) <- as.character(socialmixr::reduce_agegroups(
+      old_limits,
+      age_limits
+    ))
+    rownames(matrix_country) <- as.character(socialmixr::reduce_agegroups(
+      old_limits,
+      age_limits
+    ))
 
-  return(matrix_country)
+    unique_names <- unique(colnames(matrix_country))
+
+    row_sums <- sapply(unique_names, function(x) {
+      rowSums(matrix_country[,
+                which(colnames(matrix_country) == x),
+                drop = FALSE
+              ])
+    })
+
+    new_matrix <- sapply(unique_names, function(x) {
+      colSums(
+        row_sums[which(rownames(matrix_country) == x), ,
+          drop = FALSE
+        ]
+      )
+    })
+    rownames(new_matrix) <- c(sprintf(
+      "[%s,%s)", age_limits[-length(age_limits)],
+      age_limits[-1]
+    ), paste0(toString(age_limits[length(age_limits)]), "+"))
+    colnames(new_matrix) <- c(sprintf(
+      "[%s,%s)", age_limits[-length(age_limits)],
+      age_limits[-1]
+    ), paste0(toString(age_limits[length(age_limits)]), "+"))
+
+    return(new_matrix)
+  } else {
+    groups_name <- colnames(matrix_country)
+    old_limits <- unname(sapply(groups_name, function(x) {
+      as.integer(strsplit(x, split = "_")[[1]][1])
+    }))
+    rownames(matrix_country) <- c(
+      sprintf(
+        "[%s,%s)",
+        old_limits[-length(old_limits)], old_limits[-1]
+      ),
+      paste(toString(old_limits[length(old_limits)]), "+"
+      )
+    )
+    colnames(matrix_country) <- c(
+      sprintf(
+        "[%s,%s)",
+        old_limits[-length(old_limits)], old_limits[-1]
+      ),
+      paste0(toString(old_limits[length(old_limits)]), "+"
+      )
+    )
+    return(matrix_country)
+  }
 }
