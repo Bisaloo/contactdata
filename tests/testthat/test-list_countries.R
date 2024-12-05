@@ -4,11 +4,13 @@ test_that("list_countries()", {
 
   expect_type(contacts_2017, "character")
   expect_length(contacts_2017, 152)
+  expect_snapshot(contacts_2017)
 
   contacts_2020 <- list_countries(data_source = 2020)
 
   expect_type(contacts_2020, "character")
   expect_length(contacts_2020, 177)
+  expect_snapshot(contacts_2020)
 
 })
 
